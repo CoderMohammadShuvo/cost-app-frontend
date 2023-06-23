@@ -89,7 +89,11 @@ const Home = () => {
   const calculateNetProfit = (num1) => {
     const sum = totalBedPrice - parseInt(num1);
     setNetProfit(sum || '');
-    setRecalm(result - sum || '')
+    if(age === "1st Month"){
+      setRecalm(result - sum || '')
+    }else{
+
+    }
   };
   const [mainData, setMainData] = useState();
   useEffect(() => {
@@ -105,7 +109,20 @@ const Home = () => {
   }, [])
   console.log(mainData);
   const addProduct = () => {
-    axios.post('https://sheetdb.io/api/v1/hv9kpdpkpdxa9/', {
+    axios.post('https://sheetdb.io/api/v1/hv9kpdpkpdxa9/', age === "1st Month" ? {
+       
+    name: propertyName,
+    time_span: age,
+    money_down: `${number1}`,
+    fix_up: `${number1}`,
+    monthly_cost: `${monthlyCost}`,
+    one_bed: `${oneBed}`,
+    two_bed: `${twoBed}`,
+    three_bed: `${threeBed}`,
+    four_bed: `${fourBed}`,
+    gross_reclaim:`${recalm}`
+    } : 
+      {
         name: propertyName,
         time_span: age,
         money_down: `${number1}`,
@@ -115,7 +132,8 @@ const Home = () => {
         two_bed: `${twoBed}`,
         three_bed: `${threeBed}`,
         four_bed: `${fourBed}`,
-    })
+      }
+    )
       .then(response => {
         window.location.reload();
       })
@@ -150,6 +168,12 @@ const Home = () => {
   // Usage
   const resultTwo = createArraysFromDuplicates(jsonData);
   console.log([resultTwo])
+  const [setTime,setSelectedTime] = useState('1st Month')
+  const handleTimeChange = (event) => {
+    setSelectedTime(event.target.value);
+
+  };
+console.log(setTime);
 
   return (
     <div className='homeMain'>
@@ -270,7 +294,7 @@ const Home = () => {
             </div>
             <button className="addButton" onClick={addProduct}>Add Item</button>
           </div>
-          <div className="calculationBOx">
+          {/* <div className="calculationBOx">
             <h1>Base Price </h1>
             <div className="resultBox">
               <div className='desableSecond'>
@@ -278,7 +302,7 @@ const Home = () => {
                 {totalBedPrice && <h1 >{totalBedPrice}</h1>}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="tableContent">
           <div className="tableHead">
@@ -307,7 +331,79 @@ const Home = () => {
             <div className="tableBodyContent">
                 {
                   Object.keys(resultTwo).map((item, i) => (
-                    <h1>{item}</h1>
+                   <div className='tableIndi'>
+                        <p className='content' >{item}</p>
+                        <div className='content' >
+                          <select name="time" id="" onChange={handleTimeChange} value={setTime}>
+                            {
+                              resultTwo[item].map((data, i) => (
+                                <option>{data.time_span}</option>
+                              ))
+                            }
+                          </select>
+                        </div>
+                        <p className='content' >
+                          {
+                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
+                              <span>{data.money_down}</span>
+                            ))
+                          }
+                        </p>
+                        <p className='content' > {
+                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
+                              <span>{data.fix_up}</span>
+                            ))
+                          }</p>
+                        <p className='content' >
+                        {
+                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
+                              <span>{parseFloat(data.money_down) + parseFloat(data.fix_up)}</span>
+                            ))
+                          }
+                        </p>
+                        <p className='content' > {
+                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
+                              <span>{data.monthly_cost}</span>
+                            ))
+                          }</p>
+                        <p className='content' >{
+                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
+                              <span>{data.one_bed}</span>
+                            ))
+                          }</p>
+                        <p className='content' >{
+                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
+                              <span>{data.two_bed}</span>
+                            ))
+                          }</p>
+                        <p className='content' >{
+                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
+                              <span>{data.three_bed}</span>
+                            ))
+                          }</p>
+                        <p className='content' >{
+                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
+                              <span>{data.four_bed}</span>
+                            ))
+                          }</p>
+                        <p className='content' >{
+                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
+                              <span>{parseFloat(data.one_bed) + parseFloat(data.two_bed) + parseFloat(data.three_bed) + parseFloat(data.four_bed)}</span>
+                            ))
+                          }</p>
+                        <p className='content' >{
+                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
+                              <span>{parseFloat(data.one_bed) + parseFloat(data.two_bed) + parseFloat(data.three_bed) + parseFloat(data.four_bed) - parseFloat(data.monthly_cost)}</span>
+                            ))
+                          }</p>
+                        <p className='content' >
+                        {
+                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
+                              <span>{data.gross_reclaim}</span>
+                            ))
+                          }
+                        </p>
+                   </div>
                   ))
                 }
             </div>

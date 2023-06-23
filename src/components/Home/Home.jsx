@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -11,12 +11,14 @@ import SettingIcon from '../../images/setting.png';
 import Door from '../../images/door.png';
 import Logo from '../../images/logo.png';
 import User from '../../images/user.png';
+import SearchIcon from '../../images/search.png'
+import axios from 'axios';
 const Home = () => {
   const [age, setAge] = useState();
   const [number1, setNumber1] = useState('0');
   const [number2, setNumber2] = useState('0');
   const [result, setResult] = useState('');
-
+  const [propertyName, setPropertyName] = useState('');
   const handleNumber1Change = (e) => {
     const value = e.target.value;
     setNumber1(value);
@@ -43,27 +45,27 @@ const Home = () => {
   const [threeBed, setThreeBed] = useState('0')
   const [fourBed, setFourBed] = useState('0')
 
-  
+
   const handle1bedromPrice = (e) => {
     const value = e.target.value;
     setOneBed(value);
     calculateSumBed(value, twoBed, threeBed, fourBed);
   };
-  
+
   const handle2bedromPrice = (e) => {
     const value = e.target.value;
     setTowBed(value);
     calculateSumBed(value, oneBed, threeBed, fourBed);
   };
 
-  
+
   const handle3bedromPrice = (e) => {
     const value = e.target.value;
     setThreeBed(value);
     calculateSumBed(value, twoBed, oneBed, fourBed);
   };
 
-  
+
   const handle4bedromPrice = (e) => {
     const value = e.target.value;
     setFourBed(value);
@@ -84,11 +86,71 @@ const Home = () => {
     calculateNetProfit(value);
   };
 
-  const calculateNetProfit= (num1) => {
-    const sum = totalBedPrice - parseInt(num1)  ;
+  const calculateNetProfit = (num1) => {
+    const sum = totalBedPrice - parseInt(num1);
     setNetProfit(sum || '');
     setRecalm(result - sum || '')
   };
+  const [mainData, setMainData] = useState();
+  useEffect(() => {
+    axios.get('https://sheetdb.io/api/v1/hv9kpdpkpdxa9')
+      .then(function (response) {
+        setMainData(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+
+  }, [])
+  console.log(mainData);
+  const addProduct = () => {
+    axios.post('https://sheetdb.io/api/v1/hv9kpdpkpdxa9/', {
+        name: propertyName,
+        time_span: age,
+        money_down: `${number1}`,
+        fix_up: `${number1}`,
+        monthly_cost: `${monthlyCost}`,
+        one_bed: `${oneBed}`,
+        two_bed: `${twoBed}`,
+        three_bed: `${threeBed}`,
+        four_bed: `${fourBed}`,
+    })
+      .then(response => {
+        window.location.reload();
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+  console.log(mainData)
+  const [filterData, setFIlterData] =useState();
+  const jsonData = mainData ? mainData : null;
+  
+  // Function to create individual arrays based on duplicate names
+  function createArraysFromDuplicates(jsonData) {
+    const arrays = {};
+  
+    if(mainData){
+      jsonData.forEach(item => {
+        const { name, ...data } = item;
+    
+        if (!arrays[name]) {
+          arrays[name] = [];
+        }
+    
+        arrays[name].push(data);
+      });
+      
+    }
+    
+    return arrays;
+  }
+  
+  // Usage
+  const resultTwo = createArraysFromDuplicates(jsonData);
+  console.log([resultTwo])
+
   return (
     <div className='homeMain'>
       <div className="menu">
@@ -136,27 +198,27 @@ const Home = () => {
         <div className="mainContent">
           <div className="entryTable">
             <div className="nameSection">
-            <h1>Add New Property Entry</h1>
-            <TextField id="filled-basic" label="Property Name" variant="filled" className='propertyName'  />
+              <h1>Add New Property Entry</h1>
+              <TextField id="filled-basic" label="Property Name" variant="filled" className='propertyName' onChange={(e) => setPropertyName(e.target.value)} />
             </div>
             <div className="enetry">
-            <FormControl className='inputBox'>
-              <InputLabel id="demo-simple-select-label">Time Span</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={age}
-                label="Time Span"
-                onChange={handleChange}
-              >
-                <MenuItem value={10}>1st Month</MenuItem>
-                <MenuItem value={20}>2nd Month</MenuItem>
-                <MenuItem value={30}>3rd Month</MenuItem>
-              </Select>
-            </FormControl>
-            <TextField id="outlined-basic" type='number' label="Money Down" variant="outlined" className='inputBox' onChange={handleNumber1Change}/>
-            <TextField id="outlined-basic" type='number' label="Fix Up Cost" variant="outlined" className='inputBox'onChange={handleNumber2Change} />
-            {/* <TextField
+              <FormControl className='inputBox'>
+                <InputLabel id="demo-simple-select-label">Time Span</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={age}
+                  label="Time Span"
+                  onChange={handleChange}
+                >
+                  <MenuItem value="1st Month">1st Month</MenuItem>
+                  <MenuItem value="2nd Month">2nd Month</MenuItem>
+                  <MenuItem value="3rd Month">3rd Month</MenuItem>
+                </Select>
+              </FormControl>
+              <TextField id="outlined-basic" type='number' label="Money Down" variant="outlined" className='inputBox' onChange={handleNumber1Change} />
+              <TextField id="outlined-basic" type='number' label="Fix Up Cost" variant="outlined" className='inputBox' onChange={handleNumber2Change} />
+              {/* <TextField
             className='desableFirst'
           id="outlined-read-only-input"
           label="Total Upfront Investment:"
@@ -178,38 +240,77 @@ const Home = () => {
             },
           }}
         /> */}
-        <div className='desableFirst'>
-          <p>Total Upfront Investment:</p>
-          {result && <h1 >{result}</h1>}
-        </div>
-         {/* {result && <p>Result: {result}</p>} */}
+              <div className='desableFirst'>
+                <p>Total Upfront Investment:</p>
+                {result && <h1 >{result}</h1>}
+              </div>
+              {/* {result && <p>Result: {result}</p>} */}
             </div>
             <div className="enetry">
-            <TextField id="outlined-basic" type='number' label="1 Bedroom Price" variant="outlined" className='inputBox' onChange={handle1bedromPrice}/>
-            <TextField id="outlined-basic" type='number' label="2 Bedroom Price" variant="outlined" className='inputBox' onChange={handle2bedromPrice}/>
-            <TextField id="outlined-basic" type='number' label="3 Bedroom Price" variant="outlined" className='inputBox' onChange={handle3bedromPrice}/>
-            <TextField id="outlined-basic" type='number' label="4 Bedroom Price" variant="outlined" className='inputBox' onChange={handle4bedromPrice}/>
+              <TextField id="outlined-basic" type='number' label="1 Bedroom Price" variant="outlined" className='inputBox' onChange={handle1bedromPrice} />
+              <TextField id="outlined-basic" type='number' label="2 Bedroom Price" variant="outlined" className='inputBox' onChange={handle2bedromPrice} />
+              <TextField id="outlined-basic" type='number' label="3 Bedroom Price" variant="outlined" className='inputBox' onChange={handle3bedromPrice} />
+              <TextField id="outlined-basic" type='number' label="4 Bedroom Price" variant="outlined" className='inputBox' onChange={handle4bedromPrice} />
 
             </div>
             <div className="enetry">
-            <TextField id="outlined-basic" type='number' label="Monthly Cost" variant="outlined" className='inputBox' style={{marginTop:"20px"}} onChange={handleMonthlyCost} />
-            <div className='desableSecond'>
-          <p>Gross Monthly Profit</p>
-          {totalBedPrice && <h1 >{totalBedPrice}</h1>}
-        </div>
-        <div className='desableSecond'>
-          <p>Gross Net Profit</p>
-          {netProfit && <h1 >{netProfit}</h1>}
-        </div>
-        <div className='desableSecond'>
-          <p>Gross Reclaim/Return of Investment:</p>
-          {recalm && <h1 >{recalm}</h1>}
-        </div>
+              <TextField id="outlined-basic" type='number' label="Monthly Cost" variant="outlined" className='inputBox' style={{ marginTop: "20px" }} onChange={handleMonthlyCost} />
+              <div className='desableSecond'>
+                <p>Gross Monthly Profit</p>
+                {totalBedPrice && <h1 >{totalBedPrice}</h1>}
+              </div>
+              <div className='desableSecond'>
+                <p>Gross Net Profit</p>
+                {netProfit && <h1 >{netProfit}</h1>}
+              </div>
+              <div className='desableSecond'>
+                <p>Gross Reclaim/Return of Investment:</p>
+                {recalm && <h1 >{recalm}</h1>}
+              </div>
             </div>
-            <button className="addButton">Add Item</button>
+            <button className="addButton" onClick={addProduct}>Add Item</button>
           </div>
           <div className="calculationBOx">
             <h1>Base Price </h1>
+            <div className="resultBox">
+              <div className='desableSecond'>
+                <p>Gross Monthly Profit</p>
+                {totalBedPrice && <h1 >{totalBedPrice}</h1>}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="tableContent">
+          <div className="tableHead">
+            <div className="searchBar">
+              <input type="text" className="searchINput" placeholder='Enter Property Name..' />
+              <img src={SearchIcon} alt="" />
+            </div>
+          </div>
+          <div className="tableBody">
+            <div className="tableContentArea">
+              <p className='headings'>Name</p>
+              <p className='headings'>Time Span</p>
+              <p className='headings'>Money Down</p>
+              <p className='headings'>Fix Up Cost</p>
+              <p className='headings'>Upfront Investment</p>
+              <p className='headings'>Monthly Cost</p>
+              <p className='headings'>1 Bedroom Price </p>
+              <p className='headings'>2 Bedroom Price</p>
+              <p className='headings'>3 Bedroom Price</p>
+              <p className='headings'>4 Bedroom Price</p>
+              <p className='headings'>Gross Montly Profit</p>
+              <p className='headings'>Monthly Net Profit</p>
+              <p className='headings'>Gross Reclaim/Return of Investmentt</p>
+
+            </div>
+            <div className="tableBodyContent">
+                {
+                  Object.keys(resultTwo).map((item, i) => (
+                    <h1>{item}</h1>
+                  ))
+                }
+            </div>
           </div>
         </div>
       </div>

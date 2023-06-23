@@ -86,15 +86,7 @@ const Home = () => {
     calculateNetProfit(value);
   };
 
-  const calculateNetProfit = (num1) => {
-    const sum = totalBedPrice - parseInt(num1);
-    setNetProfit(sum || '');
-    if(age === "1st Month"){
-      setRecalm(result - sum || '')
-    }else{
-
-    }
-  };
+  
   const [mainData, setMainData] = useState();
   useEffect(() => {
     axios.get('https://sheetdb.io/api/v1/hv9kpdpkpdxa9')
@@ -107,7 +99,19 @@ const Home = () => {
       })
 
   }, [])
-  console.log(mainData);
+
+
+  const calculateNetProfit = (num1) => {
+    const sum = totalBedPrice - parseInt(num1);
+    setNetProfit(sum || '');
+    if(age === "1st Month"){
+      setRecalm(result - sum || '')
+    }else if(age === "2nd Month"){
+      console.log(mainData)
+      const gross_reclaim = mainData.filter(item => item.name === propertyName);
+      console.log("hello wordl",gross_reclaim);
+    }
+  };
   const addProduct = () => {
     axios.post('https://sheetdb.io/api/v1/hv9kpdpkpdxa9/', age === "1st Month" ? {
        
@@ -141,7 +145,7 @@ const Home = () => {
         console.error(error);
       });
   }
-  console.log(mainData)
+  // console.log(mainData)
   const [filterData, setFIlterData] =useState();
   const jsonData = mainData ? mainData : null;
   
@@ -167,13 +171,54 @@ const Home = () => {
   
   // Usage
   const resultTwo = createArraysFromDuplicates(jsonData);
-  console.log([resultTwo])
+  // console.log([resultTwo])
   const [setTime,setSelectedTime] = useState('1st Month')
   const handleTimeChange = (event) => {
     setSelectedTime(event.target.value);
 
   };
-console.log(setTime);
+// console.log(setTime);
+
+
+function calculateGrossReclaim(data) {
+  const updatedData = {};
+
+  for (const propertyName in data) {
+    if (data.hasOwnProperty(propertyName)) {
+      const propertyData = data[propertyName];
+      const updatedPropertyData = [];
+
+      let previousGrossReclaim = 0;
+      for (let i = 0; i < propertyData.length; i++) {
+        const currentData = propertyData[i];
+
+        if (i === 0) {
+          currentData.gross_reclaim = "";
+        } else {
+          const currentGrossReclaim =
+            previousGrossReclaim -
+            (parseInt(currentData.one_bed) +
+              parseInt(currentData.two_bed) +
+              parseInt(currentData.three_bed) +
+              parseInt(currentData.four_bed) -
+              parseInt(currentData.monthly_cost));
+
+          currentData.gross_reclaim = currentGrossReclaim.toString();
+          previousGrossReclaim = currentGrossReclaim;
+        }
+
+        updatedPropertyData.push(currentData);
+      }
+
+      updatedData[propertyName] = updatedPropertyData;
+    }
+  }
+
+  return updatedData;
+}
+
+const updatedData = calculateGrossReclaim([resultTwo]);
+// console.log("hello", updatedData);
 
   return (
     <div className='homeMain'>
@@ -292,7 +337,7 @@ console.log(setTime);
                 {recalm && <h1 >{recalm}</h1>}
               </div>
             </div>
-            <button className="addButton" onClick={addProduct}>Add Item</button>
+            <button className="addButton" onClick={addProduct} >Add Item</button>
           </div>
           {/* <div className="calculationBOx">
             <h1>Base Price </h1>
@@ -399,9 +444,15 @@ console.log(setTime);
                         <p className='content' >
                         {
                             resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
-                              <span>{data.gross_reclaim}</span>
+                              
+                              <>
+                               {
+                                 parseFloat(data.gross_reclaim) >= 0 ? <span style={{color:"red"}}>{data.gross_reclaim}</span> : <span style={{color:"green"}}>{data.gross_reclaim}</span>
+                               }
+                              </>
                             ))
                           }
+                          
                         </p>
                    </div>
                   ))

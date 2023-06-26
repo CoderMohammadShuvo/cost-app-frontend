@@ -13,6 +13,7 @@ import Logo from '../../images/logo.png';
 import User from '../../images/user.png';
 import SearchIcon from '../../images/search.png'
 import axios from 'axios';
+import AddButtonIcon from '../../images/plus.png'
 const Home = () => {
   const [age, setAge] = useState();
   const [number1, setNumber1] = useState('0');
@@ -89,7 +90,7 @@ const Home = () => {
   
   const [mainData, setMainData] = useState();
   useEffect(() => {
-    axios.get('https://sheetdb.io/api/v1/hv9kpdpkpdxa9')
+    axios.get('https://sheetdb.io/api/v1/2apwt2k0qx3qo')
       .then(function (response) {
         setMainData(response.data);
       })
@@ -106,14 +107,12 @@ const Home = () => {
     setNetProfit(sum || '');
     if(age === "1st Month"){
       setRecalm(result - sum || '')
-    }else if(age === "2nd Month"){
+    }else if( age === "2nd Month"){
       console.log(mainData)
-      const gross_reclaim = mainData.filter(item => item.name === propertyName);
-      console.log("hello wordl",gross_reclaim);
     }
   };
   const addProduct = () => {
-    axios.post('https://sheetdb.io/api/v1/hv9kpdpkpdxa9/', age === "1st Month" ? {
+    axios.post('https://sheetdb.io/api/v1/2apwt2k0qx3qo', age === "1st Month" ? {
        
     name: propertyName,
     time_span: age,
@@ -219,7 +218,7 @@ function calculateGrossReclaim(data) {
 
 const updatedData = calculateGrossReclaim([resultTwo]);
 // console.log("hello", updatedData);
-
+const [bedroomQUan, setBedroomQUan] = useState(2);
   return (
     <div className='homeMain'>
       <div className="menu">
@@ -268,7 +267,6 @@ const updatedData = calculateGrossReclaim([resultTwo]);
           <div className="entryTable">
             <div className="nameSection">
               <h1>Add New Property Entry</h1>
-              <TextField id="filled-basic" label="Property Name" variant="filled" className='propertyName' onChange={(e) => setPropertyName(e.target.value)} />
             </div>
             <div className="enetry">
               <FormControl className='inputBox'>
@@ -283,6 +281,15 @@ const updatedData = calculateGrossReclaim([resultTwo]);
                   <MenuItem value="1st Month">1st Month</MenuItem>
                   <MenuItem value="2nd Month">2nd Month</MenuItem>
                   <MenuItem value="3rd Month">3rd Month</MenuItem>
+                  <MenuItem value="4th Month">4th Month</MenuItem>
+                  <MenuItem value="5th Month">5th Month</MenuItem>
+                  <MenuItem value="6th Month">6th Month</MenuItem>
+                  <MenuItem value="7th Month">7th Month</MenuItem>
+                  <MenuItem value="8th Month">8th Month</MenuItem>
+                  <MenuItem value="9th Month">9th Month</MenuItem>
+                  <MenuItem value="10th Month">10th Month</MenuItem>
+                  <MenuItem value="11th Month">11th Month</MenuItem>
+                  <MenuItem value="12th Month">12th Month</MenuItem>
                 </Select>
               </FormControl>
               <TextField id="outlined-basic" type='number' label="Money Down" variant="outlined" className='inputBox' onChange={handleNumber1Change} />
@@ -315,12 +322,24 @@ const updatedData = calculateGrossReclaim([resultTwo]);
               </div>
               {/* {result && <p>Result: {result}</p>} */}
             </div>
-            <div className="enetry">
-              <TextField id="outlined-basic" type='number' label="1 Bedroom Price" variant="outlined" className='inputBox' onChange={handle1bedromPrice} />
-              <TextField id="outlined-basic" type='number' label="2 Bedroom Price" variant="outlined" className='inputBox' onChange={handle2bedromPrice} />
-              <TextField id="outlined-basic" type='number' label="3 Bedroom Price" variant="outlined" className='inputBox' onChange={handle3bedromPrice} />
-              <TextField id="outlined-basic" type='number' label="4 Bedroom Price" variant="outlined" className='inputBox' onChange={handle4bedromPrice} />
-
+            <div className="enetryTwooo">
+              <TextField id="outlined-basic" type='number' label="1 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle1bedromPrice}  />
+              {
+                bedroomQUan > 1 ?  <TextField id="outlined-basic" type='number' label="2 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle2bedromPrice} style={{marginLeft:'10px'}} /> : null
+              }
+             {
+              bedroomQUan > 2 ?  <TextField id="outlined-basic" type='number' label="3 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle3bedromPrice} style={{marginLeft:'10px'}} /> : null
+             }
+             {
+              bedroomQUan > 3 ?  <TextField id="outlined-basic" type='number' label="4 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle4bedromPrice} style={{marginLeft:'10px'}} /> : null
+             }
+             {
+              bedroomQUan > 4 ?  <TextField id="outlined-basic" type='number' label="5 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{marginLeft:'10px'}} /> : null
+             }
+              {
+              bedroomQUan > 5 ?  <TextField id="outlined-basic" type='number' label="6 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{marginLeft:'10px'}}   /> : null
+             }
+             <img src={AddButtonIcon} alt="" className='plusIcon' onClick={() => setBedroomQUan(bedroomQUan + 1)} style={{marginLeft:'10px'}} />
             </div>
             <div className="enetry">
               <TextField id="outlined-basic" type='number' label="Monthly Cost" variant="outlined" className='inputBox' style={{ marginTop: "20px" }} onChange={handleMonthlyCost} />
@@ -350,15 +369,9 @@ const updatedData = calculateGrossReclaim([resultTwo]);
           </div> */}
         </div>
         <div className="tableContent">
-          <div className="tableHead">
-            <div className="searchBar">
-              <input type="text" className="searchINput" placeholder='Enter Property Name..' />
-              <img src={SearchIcon} alt="" />
-            </div>
-          </div>
+         
           <div className="tableBody">
             <div className="tableContentArea">
-              <p className='headings'>Name</p>
               <p className='headings'>Time Span</p>
               <p className='headings'>Money Down</p>
               <p className='headings'>Fix Up Cost</p>
@@ -372,91 +385,36 @@ const updatedData = calculateGrossReclaim([resultTwo]);
               <p className='headings'>Monthly Net Profit</p>
               <p className='headings'>Gross Reclaim/Return of Investmentt</p>
 
-            </div>
+            </div>  
             <div className="tableBodyContent">
-                {
-                  Object.keys(resultTwo).map((item, i) => (
-                   <div className='tableIndi'>
-                        <p className='content' >{item}</p>
-                        <div className='content' >
-                          <select name="time" id="" onChange={handleTimeChange} value={setTime}>
-                            {
-                              resultTwo[item].map((data, i) => (
-                                <option>{data.time_span}</option>
-                              ))
-                            }
-                          </select>
-                        </div>
-                        <p className='content' >
-                          {
-                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
-                              <span>{data.money_down}</span>
-                            ))
-                          }
-                        </p>
-                        <p className='content' > {
-                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
-                              <span>{data.fix_up}</span>
-                            ))
-                          }</p>
-                        <p className='content' >
-                        {
-                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
-                              <span>{parseFloat(data.money_down) + parseFloat(data.fix_up)}</span>
-                            ))
-                          }
-                        </p>
-                        <p className='content' > {
-                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
-                              <span>{data.monthly_cost}</span>
-                            ))
-                          }</p>
-                        <p className='content' >{
-                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
-                              <span>{data.one_bed}</span>
-                            ))
-                          }</p>
-                        <p className='content' >{
-                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
-                              <span>{data.two_bed}</span>
-                            ))
-                          }</p>
-                        <p className='content' >{
-                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
-                              <span>{data.three_bed}</span>
-                            ))
-                          }</p>
-                        <p className='content' >{
-                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
-                              <span>{data.four_bed}</span>
-                            ))
-                          }</p>
-                        <p className='content' >{
-                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
-                              <span>{parseFloat(data.one_bed) + parseFloat(data.two_bed) + parseFloat(data.three_bed) + parseFloat(data.four_bed)}</span>
-                            ))
-                          }</p>
-                        <p className='content' >{
-                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
-                              <span>{parseFloat(data.one_bed) + parseFloat(data.two_bed) + parseFloat(data.three_bed) + parseFloat(data.four_bed) - parseFloat(data.monthly_cost)}</span>
-                            ))
-                          }</p>
-                        <p className='content' >
-                        {
-                            resultTwo[item].filter(item => item.time_span === setTime).map((data, i)=> (
+              {
+               mainData && mainData.map((item, i) => (
+                  <div className="tableIndi">
+                    <p className='content' ><span>{item.time_span}</span></p>
+                    <p className='content' ><span>{item.money_down}</span></p>
+                    <p className='content' ><span>{item.fix_up}</span></p>
+                    <p className='content' ><span>{parseFloat(item.money_down) + parseFloat(item.fix_up)}</span></p>
+                    <p className='content' ><span>{item.monthly_cost}</span></p>
+                    <p className='content' ><span>{item.one_bed}</span></p>
+                    <p className='content' ><span>{item.two_bed}</span></p>
+                    <p className='content' ><span>{item.three_bed}</span></p>
+                    <p className='content' ><span>{item.four_bed}</span></p>
+                    <p className='content' > <span>{parseFloat(item.one_bed) + parseFloat(item.two_bed) + parseFloat(item.three_bed) + parseFloat(item.four_bed)}</span></p>
+                    <p className='content' > <span>{parseFloat(item.one_bed) + parseFloat(item.two_bed) + parseFloat(item.three_bed) + parseFloat(item.four_bed) - parseFloat(item.monthly_cost)}</span></p>
+                    <p className='content' >
+                       
                               
-                              <>
                                {
-                                 parseFloat(data.gross_reclaim) >= 0 ? <span style={{color:"red"}}>{data.gross_reclaim}</span> : <span style={{color:"green"}}>{data.gross_reclaim}</span>
+                                 parseFloat(item.gross_reclaim) >= 0 ? <span style={{color:"red"}}>{item.gross_reclaim}</span> : <span style={{color:"green"}}>{item.gross_reclaim}</span>
                                }
-                              </>
-                            ))
-                          }
+                             
+                           
+                          
                           
                         </p>
-                   </div>
-                  ))
-                }
+                  </div>
+                ))
+              }
             </div>
           </div>
         </div>

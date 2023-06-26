@@ -59,7 +59,7 @@ height: 43px;
     justify-content: space-between;
 }
 .entryTable{
-    width: 65%;
+    width: 100%;
     min-height: 430px;
     background: rgba(255, 255, 255, 0.69);
     border-radius: 20px;
@@ -94,11 +94,32 @@ font-weight: 700;
     text-align: left;
     height: 49px;
 }
+.inputBoxTwo{
+    width: 14%;
+    background: #FFF9F9;
+    text-align: left;
+    height: 49px;
+    
+}
 .enetry{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between  ;
+    align-items: center;
     margin-top: 20px;
+}
+.enetryTwooo{
+    width: 100%;
+    display: flex;
+    justify-content: start  ;
+    align-items: center;
+    margin-top: 20px;
+}
+.plusIcon{
+    height: 30px;
+    width: 30px;  
+    cursor: pointer;  
+    
 }
 .desableFirst{
     height: 49px;
@@ -216,34 +237,35 @@ margin-right: 20px;
     height: 60vh;
     overflow-x: scroll;
 }
-.tableContentArea{
-   display: flex;
-    width: 2400px;
+.tableContentArea {
+    display: flex;
+    width: 100%;
     height: 50px;
     background: #6E3559;
 }
-.headings{
-    width: 200px;
+.headings {
+    width: 7%;
     display: flex;
-    font-size: 14px;
+    font-size: 11px;
     align-items: center;
     color: white;
     border-right: 1px solid white;
     justify-content: center;
+    padding: 10px;
 }
-.tableBodyContent{
+.tableBodyContent {
     height: 50vh;
-    width: 2400px;
+    width: 100%;
 }
 .tableBodyContent{
     background: rgba(182, 79, 141, 0.25);
 
 }
-.tableIndi{
-    width: 2400px;
+.tableIndi {
+    width: 100%;
     height: 40px;
-display: flex;
-align-items: center;
+    display: flex;
+    align-items: center;
 }
 .tableIndi:nth-child(2n+1){
     background: rgba(182, 79, 141, 0.35);

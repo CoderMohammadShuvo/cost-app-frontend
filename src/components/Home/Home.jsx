@@ -45,37 +45,55 @@ const Home = () => {
   const [twoBed, setTowBed] = useState('0')
   const [threeBed, setThreeBed] = useState('0')
   const [fourBed, setFourBed] = useState('0')
+  const [fiveBed, setFiveBed] = useState('0')
+  const [sixBed, setSixBed] = useState('0')
 
 
   const handle1bedromPrice = (e) => {
     const value = e.target.value;
     setOneBed(value);
-    calculateSumBed(value, twoBed, threeBed, fourBed);
+    calculateSumBed(value, twoBed, threeBed, fourBed, fiveBed, sixBed);
   };
 
   const handle2bedromPrice = (e) => {
     const value = e.target.value;
     setTowBed(value);
-    calculateSumBed(value, oneBed, threeBed, fourBed);
+    calculateSumBed(value, oneBed, threeBed, fourBed, fiveBed, sixBed);
   };
 
 
   const handle3bedromPrice = (e) => {
     const value = e.target.value;
     setThreeBed(value);
-    calculateSumBed(value, twoBed, oneBed, fourBed);
+    calculateSumBed(value, twoBed, oneBed, fourBed, fiveBed, sixBed);
   };
 
 
   const handle4bedromPrice = (e) => {
     const value = e.target.value;
     setFourBed(value);
-    calculateSumBed(value, twoBed, threeBed, oneBed);
+    calculateSumBed(value, twoBed, threeBed, oneBed, fiveBed, sixBed);
+  };
+  const handle5bedromPrice = (e) => {
+    const value = e.target.value;
+    setFiveBed(value);
+    calculateSumBed(value, twoBed, threeBed, oneBed, fourBed, sixBed);
+  };
+  const handle6bedromPrice = (e) => {
+    const value = e.target.value;
+    setFiveBed(value);
+    calculateSumBed(value, twoBed, threeBed, oneBed, fourBed, fiveBed);
   };
 
 
-  const calculateSumBed = (num1, num2, num3, num4) => {
-    const sum = parseInt(num1) + parseInt(num2) + parseInt(num3) + parseInt(num4);
+  const calculateSumBed = (num1, num2, num3, num4, num5, num6) => {
+    const sum =
+      (num1 ? parseInt(num1) : 0) +
+      (num2 ? parseInt(num2) : 0) +
+      (num3 ? parseInt(num3) : 0) +
+      (num2 ? parseInt(num4) : 0) +
+      (num3 ? parseInt(num5) : 0) +
+      (num4 ? parseInt(num6) : 0);
     setTotalBedPRice(sum || '');
   };
   const [monthlyCost, setMonthlyCost] = useState('0');
@@ -218,7 +236,13 @@ function calculateGrossReclaim(data) {
 
 const updatedData = calculateGrossReclaim([resultTwo]);
 // console.log("hello", updatedData);
-const [bedroomQUan, setBedroomQUan] = useState(2);
+const [bedroomQUan, setBedroomQUan] = useState(1);
+
+
+
+
+
+
   return (
     <div className='homeMain'>
       <div className="menu">
@@ -334,10 +358,10 @@ const [bedroomQUan, setBedroomQUan] = useState(2);
               bedroomQUan > 3 ?  <TextField id="outlined-basic" type='number' label="4 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle4bedromPrice} style={{marginLeft:'10px'}} /> : null
              }
              {
-              bedroomQUan > 4 ?  <TextField id="outlined-basic" type='number' label="5 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{marginLeft:'10px'}} /> : null
+              bedroomQUan > 4 ?  <TextField id="outlined-basic" type='number' label="5 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{marginLeft:'10px'}} onChange={handle5bedromPrice} /> : null
              }
               {
-              bedroomQUan > 5 ?  <TextField id="outlined-basic" type='number' label="6 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{marginLeft:'10px'}}   /> : null
+              bedroomQUan > 5 ?  <TextField id="outlined-basic" type='number' label="6 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{marginLeft:'10px'}} onChange={handle6bedromPrice}   /> : null
              }
              <img src={AddButtonIcon} alt="" className='plusIcon' onClick={() => setBedroomQUan(bedroomQUan + 1)} style={{marginLeft:'10px'}} />
             </div>

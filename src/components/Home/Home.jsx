@@ -19,7 +19,27 @@ const Home = () => {
   const [number1, setNumber1] = useState('0');
   const [number2, setNumber2] = useState('0');
   const [result, setResult] = useState('');
-  const [propertyName, setPropertyName] = useState('');
+  // const [propertyName, setPropertyName] = useState('');
+  // const [moneyDown2, setMoneyDown2] = useState('');
+  // const [moneyDown3, setMoneyDown3] = useState('');
+  // const [moneyDown4, setMoneyDown4] = useState('');
+  // const [moneyDown5, setMoneyDown5] = useState('');
+  // const [moneyDown6, setMoneyDown6] = useState('');
+  // const [moneyDown7, setMoneyDown7] = useState('');
+  // const [moneyDown8, setMoneyDown8] = useState('');
+  // const [moneyDown9, setMoneyDown9] = useState('');
+  // const [moneyDown10, setMoneyDown10] = useState('');
+  // const [moneyDown11, setMoneyDown11] = useState('');
+  // const [moneyDown12, setMoneyDown12] = useState('');
+
+
+
+
+
+
+
+
+
   const handleNumber1Change = (e) => {
     const value = e.target.value;
     setNumber1(value);
@@ -47,17 +67,26 @@ const Home = () => {
   const [fourBed, setFourBed] = useState('0')
   const [fiveBed, setFiveBed] = useState('0')
   const [sixBed, setSixBed] = useState('0')
-
+  const [oneBed2, setOneBed2] = useState('0')
+  const [twoBed2, setTowBed2] = useState('0')
+  const [threeBed2, setThreeBed2] = useState('0')
+  const [fourBed2, setFourBed2] = useState('0')
+  const [fiveBed2, setFiveBed2] = useState('0')
+  const [sixBed2, setSixBed2] = useState('0')
+  const [monthlyCost2, setMonthlyCost2] = useState('0');
 
   const handle1bedromPrice = (e) => {
     const value = e.target.value;
     setOneBed(value);
+    setOneBed2(value)
     calculateSumBed(value, twoBed, threeBed, fourBed, fiveBed, sixBed);
   };
 
   const handle2bedromPrice = (e) => {
     const value = e.target.value;
     setTowBed(value);
+    setTowBed2(value);
+    
     calculateSumBed(value, oneBed, threeBed, fourBed, fiveBed, sixBed);
   };
 
@@ -65,6 +94,7 @@ const Home = () => {
   const handle3bedromPrice = (e) => {
     const value = e.target.value;
     setThreeBed(value);
+    setThreeBed2(value);
     calculateSumBed(value, twoBed, oneBed, fourBed, fiveBed, sixBed);
   };
 
@@ -72,16 +102,19 @@ const Home = () => {
   const handle4bedromPrice = (e) => {
     const value = e.target.value;
     setFourBed(value);
+    setFourBed2(value);
     calculateSumBed(value, twoBed, threeBed, oneBed, fiveBed, sixBed);
   };
   const handle5bedromPrice = (e) => {
     const value = e.target.value;
     setFiveBed(value);
+    setFiveBed2(value)
     calculateSumBed(value, twoBed, threeBed, oneBed, fourBed, sixBed);
   };
   const handle6bedromPrice = (e) => {
     const value = e.target.value;
-    setFiveBed(value);
+    setSixBed(value);
+    setSixBed2(value);
     calculateSumBed(value, twoBed, threeBed, oneBed, fourBed, fiveBed);
   };
 
@@ -91,14 +124,15 @@ const Home = () => {
       (num1 ? parseInt(num1) : 0) +
       (num2 ? parseInt(num2) : 0) +
       (num3 ? parseInt(num3) : 0) +
-      (num2 ? parseInt(num4) : 0) +
-      (num3 ? parseInt(num5) : 0) +
-      (num4 ? parseInt(num6) : 0);
+      (num4 ? parseInt(num4) : 0) +
+      (num5 ? parseInt(num5) : 0) +
+      (num6 ? parseInt(num6) : 0);
     setTotalBedPRice(sum || '');
   };
   const [monthlyCost, setMonthlyCost] = useState('0');
   const [netProfit, setNetProfit] = useState('0');
   const [recalm, setRecalm] = useState('0')
+  const [recalm2, setRecalm2] = useState('0');
   const handleMonthlyCost = (e) => {
     const value = e.target.value;
     setMonthlyCost(value);
@@ -108,7 +142,7 @@ const Home = () => {
   
   const [mainData, setMainData] = useState();
   useEffect(() => {
-    axios.get('https://sheetdb.io/api/v1/2apwt2k0qx3qo')
+    axios.get('https://sheetdb.io/api/v1/6r2wub6h8j2d0')
       .then(function (response) {
         setMainData(response.data);
       })
@@ -122,18 +156,15 @@ const Home = () => {
 
   const calculateNetProfit = (num1) => {
     const sum = totalBedPrice - parseInt(num1);
-    setNetProfit(sum || '');
-    if(age === "1st Month"){
+ 
       setRecalm(result - sum || '')
-    }else if( age === "2nd Month"){
-      console.log(mainData)
-    }
+    
   };
   const addProduct = () => {
-    axios.post('https://sheetdb.io/api/v1/2apwt2k0qx3qo', age === "1st Month" ? {
+    axios.post('https://sheetdb.io/api/v1/6r2wub6h8j2d0', 
        
-    name: propertyName,
-    time_span: age,
+   {
+    time_span: "1st Month",
     money_down: `${number1}`,
     fix_up: `${number1}`,
     monthly_cost: `${monthlyCost}`,
@@ -141,19 +172,10 @@ const Home = () => {
     two_bed: `${twoBed}`,
     three_bed: `${threeBed}`,
     four_bed: `${fourBed}`,
-    gross_reclaim:`${recalm}`
-    } : 
-      {
-        name: propertyName,
-        time_span: age,
-        money_down: `${number1}`,
-        fix_up: `${number1}`,
-        monthly_cost: `${monthlyCost}`,
-        one_bed: `${oneBed}`,
-        two_bed: `${twoBed}`,
-        three_bed: `${threeBed}`,
-        four_bed: `${fourBed}`,
-      }
+    gross_reclaim:`${recalm}`,
+    time: age,
+   }
+    
     )
       .then(response => {
         window.location.reload();
@@ -237,6 +259,7 @@ function calculateGrossReclaim(data) {
 const updatedData = calculateGrossReclaim([resultTwo]);
 // console.log("hello", updatedData);
 const [bedroomQUan, setBedroomQUan] = useState(1);
+const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost);
 
 
 
@@ -302,18 +325,18 @@ const [bedroomQUan, setBedroomQUan] = useState(1);
                   label="Time Span"
                   onChange={handleChange}
                 >
-                  <MenuItem value="1st Month">1st Month</MenuItem>
-                  <MenuItem value="2nd Month">2nd Month</MenuItem>
-                  <MenuItem value="3rd Month">3rd Month</MenuItem>
-                  <MenuItem value="4th Month">4th Month</MenuItem>
-                  <MenuItem value="5th Month">5th Month</MenuItem>
-                  <MenuItem value="6th Month">6th Month</MenuItem>
-                  <MenuItem value="7th Month">7th Month</MenuItem>
-                  <MenuItem value="8th Month">8th Month</MenuItem>
-                  <MenuItem value="9th Month">9th Month</MenuItem>
-                  <MenuItem value="10th Month">10th Month</MenuItem>
-                  <MenuItem value="11th Month">11th Month</MenuItem>
-                  <MenuItem value="12th Month">12th Month</MenuItem>
+                  <MenuItem value={1}>1st Month</MenuItem>
+                  <MenuItem value={2}>2nd Month</MenuItem>
+                  <MenuItem value={3}>3rd Month</MenuItem>
+                  <MenuItem value={4}>4th Month</MenuItem>
+                  <MenuItem value={5}>5th Month</MenuItem>
+                  <MenuItem value={6}>6th Month</MenuItem>
+                  <MenuItem value={7}>7th Month</MenuItem>
+                  <MenuItem value={8}>8th Month</MenuItem>
+                  <MenuItem value={9}>9th Month</MenuItem>
+                  <MenuItem value={10}>10th Month</MenuItem>
+                  <MenuItem value={11}>11th Month</MenuItem>
+                  <MenuItem value={12}>12th Month</MenuItem>
                 </Select>
               </FormControl>
               <TextField id="outlined-basic" type='number' label="Money Down" variant="outlined" className='inputBox' onChange={handleNumber1Change} />
@@ -363,7 +386,11 @@ const [bedroomQUan, setBedroomQUan] = useState(1);
               {
               bedroomQUan > 5 ?  <TextField id="outlined-basic" type='number' label="6 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{marginLeft:'10px'}} onChange={handle6bedromPrice}   /> : null
              }
-             <img src={AddButtonIcon} alt="" className='plusIcon' onClick={() => setBedroomQUan(bedroomQUan + 1)} style={{marginLeft:'10px'}} />
+            <div className="addBedRoomButton" onClick={() => setBedroomQUan(bedroomQUan + 1)}>
+              
+              <img src={AddButtonIcon} alt="" className='plusIcon'  style={{marginLeft:'10px'}} />
+              <p>Add Bedroom</p>
+            </div>
             </div>
             <div className="enetry">
               <TextField id="outlined-basic" type='number' label="Monthly Cost" variant="outlined" className='inputBox' style={{ marginTop: "20px" }} onChange={handleMonthlyCost} />
@@ -401,35 +428,60 @@ const [bedroomQUan, setBedroomQUan] = useState(1);
               <p className='headings'>Fix Up Cost</p>
               <p className='headings'>Upfront Investment</p>
               <p className='headings'>Monthly Cost</p>
-              <p className='headings'>1 Bedroom Price </p>
-              <p className='headings'>2 Bedroom Price</p>
-              <p className='headings'>3 Bedroom Price</p>
-              <p className='headings'>4 Bedroom Price</p>
+              <p className='headings'>1st Bedroom Price </p>
+              {
+                bedroomQUan >= 2 ? <p className='headings'>2nd Bedroom Price</p> : null
+              }
+              {
+                bedroomQUan >= 3 ? <p className='headings'>3rd Bedroom Price</p> : null
+              }
+              {
+                bedroomQUan >= 4 ? <p className='headings'>4th Bedroom Price</p> : null
+              }
+              {
+                bedroomQUan >= 5 ? <p className='headings'>5th Bedroom Price</p> : null
+              }
+              {
+                bedroomQUan >= 6 ? <p className='headings'>5th Bedroom Price</p> : null
+              }
+          
               <p className='headings'>Gross Montly Profit</p>
               <p className='headings'>Monthly Net Profit</p>
               <p className='headings'>Gross Reclaim/Return of Investmentt</p>
 
             </div>  
             <div className="tableBodyContent">
-              {
-               mainData && mainData.map((item, i) => (
+    
                   <div className="tableIndi">
-                    <p className='content' ><span>{item.time_span}</span></p>
-                    <p className='content' ><span>{item.money_down}</span></p>
-                    <p className='content' ><span>{item.fix_up}</span></p>
-                    <p className='content' ><span>{parseFloat(item.money_down) + parseFloat(item.fix_up)}</span></p>
-                    <p className='content' ><span>{item.monthly_cost}</span></p>
-                    <p className='content' ><span>{item.one_bed}</span></p>
-                    <p className='content' ><span>{item.two_bed}</span></p>
-                    <p className='content' ><span>{item.three_bed}</span></p>
-                    <p className='content' ><span>{item.four_bed}</span></p>
-                    <p className='content' > <span>{parseFloat(item.one_bed) + parseFloat(item.two_bed) + parseFloat(item.three_bed) + parseFloat(item.four_bed)}</span></p>
-                    <p className='content' > <span>{parseFloat(item.one_bed) + parseFloat(item.two_bed) + parseFloat(item.three_bed) + parseFloat(item.four_bed) - parseFloat(item.monthly_cost)}</span></p>
+                    <p className='content' ><span>1st Month</span></p>
+                    <p className='content' ><span>{number1}</span></p>
+                    <p className='content' ><span>{number2}</span></p>
+                    <p className='content' ><span>{parseFloat(number1) + parseFloat(number2)}</span></p>
+                    <p className='content' ><span>{monthlyCost}</span></p>
+                    <p className='content' ><span>{oneBed}</span></p>
+                    {
+                      bedroomQUan >= 2 ? <p className='content' ><span>{twoBed}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 3 ? <p className='content' ><span>{threeBed}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 4 ? <p className='content' ><span>{fourBed}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 5 ? <p className='content' ><span>{fiveBed}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 6 ? <p className='content' ><span>{sixBed}</span></p> : null
+                    }
+                  
+                    <p className='content' > <span>{parseFloat(oneBed) + parseFloat(twoBed) + parseFloat(threeBed) + parseFloat(fourBed) + parseFloat(fiveBed) + parseFloat(sixBed)}</span></p>
+                    <p className='content' > <span>{netProf}</span></p>
                     <p className='content' >
                        
                               
                                {
-                                 parseFloat(item.gross_reclaim) >= 0 ? <span style={{color:"red"}}>{item.gross_reclaim}</span> : <span style={{color:"green"}}>{item.gross_reclaim}</span>
+                                 parseFloat(recalm) >= 0 ? <span style={{color:"red"}}>{recalm}</span> : <span style={{color:"green"}}>{recalm}</span>
                                }
                              
                            
@@ -437,8 +489,627 @@ const [bedroomQUan, setBedroomQUan] = useState(1);
                           
                         </p>
                   </div>
-                ))
-              }
+                  {
+                    age  >= 2 ? <div className="tableIndi">
+                    <p className='content' ><span>2nd Month</span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span>{monthlyCost}</span></p>
+                    <p className='content' ><span>{oneBed2}</span></p>
+                    {
+                      bedroomQUan >= 2 ? <p className='content' ><span>{twoBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 3 ? <p className='content' ><span>{threeBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 4 ? <p className='content' ><span>{fourBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 5 ? <p className='content' ><span>{fiveBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 6 ? <p className='content' ><span>{sixBed2}</span></p> : null
+                    }
+                  
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2)}</span></p>
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)}</span></p>
+                    <p className='content' >
+                       
+                              
+                               {
+                                 parseFloat(recalm) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) }</span> : <span style={{color:"green"}}>{recalm}</span>
+                               }
+                             
+                           
+                          
+                          
+                        </p>
+                  </div> : null
+                  }
+                  {
+                    age  >= 3 ? <div className="tableIndi">
+                    <p className='content' ><span>3rd Month</span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span>{monthlyCost}</span></p>
+                    <p className='content' ><span>{oneBed2}</span></p>
+                    {
+                      bedroomQUan >= 2 ? <p className='content' ><span>{twoBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 3 ? <p className='content' ><span>{threeBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 4 ? <p className='content' ><span>{fourBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 5 ? <p className='content' ><span>{fiveBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 6 ? <p className='content' ><span>{sixBed2}</span></p> : null
+                    }
+                  
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2)}</span></p>
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)}</span></p>
+                    <p className='content' >
+                       
+                              
+                               {
+                                 parseFloat(recalm) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))}</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))}</span>
+                               }
+                             
+                           
+                          
+                          
+                        </p>
+                  </div> : null
+                  }
+                  {
+                    age  >= 4 ? <div className="tableIndi">
+                    <p className='content' ><span>4th Month</span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span>{monthlyCost}</span></p>
+                    <p className='content' ><span>{oneBed2}</span></p>
+                    {
+                      bedroomQUan >= 2 ? <p className='content' ><span>{twoBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 3 ? <p className='content' ><span>{threeBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 4 ? <p className='content' ><span>{fourBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 5 ? <p className='content' ><span>{fiveBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 6 ? <p className='content' ><span>{sixBed2}</span></p> : null
+                    }
+                  
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2)}</span></p>
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)}</span></p>
+                    <p className='content' >
+                       
+                              
+                               {
+                                 parseFloat(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                    }</span>
+                               }
+                             
+                           
+                          
+                          
+                        </p>
+                  </div> : null
+                  }
+                  {
+                    age  >= 5 ? <div className="tableIndi">
+                    <p className='content' ><span>5th Month</span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span>{monthlyCost}</span></p>
+                    <p className='content' ><span>{oneBed2}</span></p>
+                    {
+                      bedroomQUan >= 2 ? <p className='content' ><span>{twoBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 3 ? <p className='content' ><span>{threeBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 4 ? <p className='content' ><span>{fourBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 5 ? <p className='content' ><span>{fiveBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 6 ? <p className='content' ><span>{sixBed2}</span></p> : null
+                    }
+                  
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2)}</span></p>
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)}</span></p>
+                    <p className='content' >
+                       
+                              
+                               {
+                                 parseFloat(recalm -  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                    }</span>
+                               }
+                             
+                           
+                          
+                          
+                        </p>
+                  </div> : null
+                  }
+                   {
+                    age  >= 6 ? <div className="tableIndi">
+                    <p className='content' ><span>6th Month</span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span>{monthlyCost}</span></p>
+                    <p className='content' ><span>{oneBed2}</span></p>
+                    {
+                      bedroomQUan >= 2 ? <p className='content' ><span>{twoBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 3 ? <p className='content' ><span>{threeBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 4 ? <p className='content' ><span>{fourBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 5 ? <p className='content' ><span>{fiveBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 6 ? <p className='content' ><span>{sixBed2}</span></p> : null
+                    }
+                  
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2)}</span></p>
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)}</span></p>
+                    <p className='content' >
+                       
+                              
+                               {
+                                 parseFloat(recalm - ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                    }</span>
+                               }
+                             
+                           
+                          
+                          
+                        </p>
+                  </div> : null
+                  }
+                   {
+                    age  >= 7 ? <div className="tableIndi">
+                    <p className='content' ><span>7th Month</span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span>{monthlyCost}</span></p>
+                    <p className='content' ><span>{oneBed2}</span></p>
+                    {
+                      bedroomQUan >= 2 ? <p className='content' ><span>{twoBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 3 ? <p className='content' ><span>{threeBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 4 ? <p className='content' ><span>{fourBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 5 ? <p className='content' ><span>{fiveBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 6 ? <p className='content' ><span>{sixBed2}</span></p> : null
+                    }
+                  
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2)}</span></p>
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)}</span></p>
+                    <p className='content' >
+                       
+                              
+                               {
+                                 parseFloat(recalm - ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                    }</span>
+                               }
+                             
+                           
+                          
+                          
+                        </p>
+                  </div> : null
+                  }
+                  {
+                    age  >= 8 ? <div className="tableIndi">
+                    <p className='content' ><span>8th Month</span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span>{monthlyCost}</span></p>
+                    <p className='content' ><span>{oneBed2}</span></p>
+                    {
+                      bedroomQUan >= 2 ? <p className='content' ><span>{twoBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 3 ? <p className='content' ><span>{threeBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 4 ? <p className='content' ><span>{fourBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 5 ? <p className='content' ><span>{fiveBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 6 ? <p className='content' ><span>{sixBed2}</span></p> : null
+                    }
+                  
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2)}</span></p>
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)}</span></p>
+                    <p className='content' >
+                       
+                              
+                               {
+                                 parseFloat(recalm -(parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                    }</span>
+                               }
+                             
+                           
+                          
+                          
+                        </p>
+                  </div> : null
+                  }
+                  {
+                    age  >= 9 ? <div className="tableIndi">
+                    <p className='content' ><span>9th Month</span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span>{monthlyCost}</span></p>
+                    <p className='content' ><span>{oneBed2}</span></p>
+                    {
+                      bedroomQUan >= 2 ? <p className='content' ><span>{twoBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 3 ? <p className='content' ><span>{threeBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 4 ? <p className='content' ><span>{fourBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 5 ? <p className='content' ><span>{fiveBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 6 ? <p className='content' ><span>{sixBed2}</span></p> : null
+                    }
+                  
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2)}</span></p>
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)}</span></p>
+                    <p className='content' >
+                       
+                              
+                               {
+                                 parseFloat(recalm -(parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))  -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                 ) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                    }</span>
+                               }
+                             
+                           
+                          
+                          
+                        </p>
+                  </div> : null
+                  }
+                  {
+                    age  >= 10 ? <div className="tableIndi">
+                    <p className='content' ><span>10th Month</span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span>{monthlyCost}</span></p>
+                    <p className='content' ><span>{oneBed2}</span></p>
+                    {
+                      bedroomQUan >= 2 ? <p className='content' ><span>{twoBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 3 ? <p className='content' ><span>{threeBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 4 ? <p className='content' ><span>{fourBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 5 ? <p className='content' ><span>{fiveBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 6 ? <p className='content' ><span>{sixBed2}</span></p> : null
+                    }
+                  
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2)}</span></p>
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)}</span></p>
+                    <p className='content' >
+                       
+                              
+                               {
+                                 parseFloat(recalm -(parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))  -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) 
+                                 ) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) 
+                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) 
+                                    }</span>
+                               }
+                             
+                           
+                          
+                          
+                        </p>
+                  </div> : null
+                  }
+
+{
+                    age  >= 11 ? <div className="tableIndi">
+                    <p className='content' ><span>11th Month</span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span>{monthlyCost}</span></p>
+                    <p className='content' ><span>{oneBed2}</span></p>
+                    {
+                      bedroomQUan >= 2 ? <p className='content' ><span>{twoBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 3 ? <p className='content' ><span>{threeBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 4 ? <p className='content' ><span>{fourBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 5 ? <p className='content' ><span>{fiveBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 6 ? <p className='content' ><span>{sixBed2}</span></p> : null
+                    }
+                  
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2)}</span></p>
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)}</span></p>
+                    <p className='content' >
+                       
+                              
+                               {
+                                 parseFloat(recalm -(parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))  -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                 ) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) 
+                                    }</span>
+                               }
+                             
+                           
+                          
+                          
+                        </p>
+                  </div> : null
+                  }
+             
+
+             {
+                    age  >= 12 ? <div className="tableIndi">
+                    <p className='content' ><span>12th Month</span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span></span></p>
+                    <p className='content' ><span>{monthlyCost}</span></p>
+                    <p className='content' ><span>{oneBed2}</span></p>
+                    {
+                      bedroomQUan >= 2 ? <p className='content' ><span>{twoBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 3 ? <p className='content' ><span>{threeBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 4 ? <p className='content' ><span>{fourBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 5 ? <p className='content' ><span>{fiveBed2}</span></p> : null
+                    }
+                    {
+                      bedroomQUan >= 6 ? <p className='content' ><span>{sixBed2}</span></p> : null
+                    }
+                  
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2)}</span></p>
+                    <p className='content' > <span>{parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)}</span></p>
+                    <p className='content' >
+                       
+                              
+                               {
+                                 parseFloat(recalm -(parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))  -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                 ) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
+                                    ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
+                                    }</span>
+                               }
+                             
+                           
+                          
+                          
+                        </p>
+                  </div> : null
+                  }
             </div>
           </div>
         </div>

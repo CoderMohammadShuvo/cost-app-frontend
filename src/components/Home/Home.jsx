@@ -11,9 +11,24 @@ import SettingIcon from '../../images/setting.png';
 import Door from '../../images/door.png';
 import Logo from '../../images/logo.png';
 import User from '../../images/user.png';
-import SearchIcon from '../../images/search.png'
+
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 import axios from 'axios';
 import AddButtonIcon from '../../images/plus.png'
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 const Home = () => {
   const [age, setAge] = useState();
   const [number1, setNumber1] = useState('0');
@@ -81,7 +96,7 @@ const Home = () => {
     setOneBed2(value)
     calculateSumBed(value, twoBed, threeBed, fourBed, fiveBed, sixBed);
   };
-
+  
   const handle2bedromPrice = (e) => {
     const value = e.target.value;
     setTowBed(value);
@@ -260,8 +275,14 @@ const updatedData = calculateGrossReclaim([resultTwo]);
 // console.log("hello", updatedData);
 const [bedroomQUan, setBedroomQUan] = useState(1);
 const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost);
+const [modTItle,setModTitle] = useState();
+const [open, setOpen] = React.useState(false);
+const handleOpen = (name, id, state) => {
+  setModTitle(name)
+  setOpen(true)
 
-
+};
+const handleClose = () => setOpen(false);
 
 
 
@@ -339,8 +360,8 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                   <MenuItem value={12}>12th Month</MenuItem>
                 </Select>
               </FormControl>
-              <TextField id="outlined-basic" type='number' label="Money Down" variant="outlined" className='inputBox' onChange={handleNumber1Change} />
-              <TextField id="outlined-basic" type='number' label="Fix Up Cost" variant="outlined" className='inputBox' onChange={handleNumber2Change} />
+              <TextField id="outlined-basic" type='text' label="Money Down" variant="outlined" className='inputBox' onChange={handleNumber1Change} />
+              <TextField id="outlined-basic" type='text' label="Fix Up Cost" variant="outlined" className='inputBox' onChange={handleNumber2Change} />
               {/* <TextField
             className='desableFirst'
           id="outlined-read-only-input"
@@ -370,21 +391,21 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
               {/* {result && <p>Result: {result}</p>} */}
             </div>
             <div className="enetryTwooo">
-              <TextField id="outlined-basic" type='number' label="1 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle1bedromPrice}  />
+              <TextField id="outlined-basic" type='text' label="1 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle1bedromPrice}  />
               {
-                bedroomQUan > 1 ?  <TextField id="outlined-basic" type='number' label="2 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle2bedromPrice} style={{marginLeft:'10px'}} /> : null
+                bedroomQUan > 1 ?  <TextField id="outlined-basic" type='text' label="2 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle2bedromPrice} style={{marginLeft:'10px'}} /> : null
               }
              {
-              bedroomQUan > 2 ?  <TextField id="outlined-basic" type='number' label="3 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle3bedromPrice} style={{marginLeft:'10px'}} /> : null
+              bedroomQUan > 2 ?  <TextField id="outlined-basic" type='text' label="3 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle3bedromPrice} style={{marginLeft:'10px'}} /> : null
              }
              {
-              bedroomQUan > 3 ?  <TextField id="outlined-basic" type='number' label="4 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle4bedromPrice} style={{marginLeft:'10px'}} /> : null
+              bedroomQUan > 3 ?  <TextField id="outlined-basic" type='text' label="4 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle4bedromPrice} style={{marginLeft:'10px'}} /> : null
              }
              {
-              bedroomQUan > 4 ?  <TextField id="outlined-basic" type='number' label="5 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{marginLeft:'10px'}} onChange={handle5bedromPrice} /> : null
+              bedroomQUan > 4 ?  <TextField id="outlined-basic" type='text' label="5 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{marginLeft:'10px'}} onChange={handle5bedromPrice} /> : null
              }
               {
-              bedroomQUan > 5 ?  <TextField id="outlined-basic" type='number' label="6 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{marginLeft:'10px'}} onChange={handle6bedromPrice}   /> : null
+              bedroomQUan > 5 ?  <TextField id="outlined-basic" type='text' label="6 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{marginLeft:'10px'}} onChange={handle6bedromPrice}   /> : null
              }
             <div className="addBedRoomButton" onClick={() => setBedroomQUan(bedroomQUan + 1)}>
               
@@ -393,7 +414,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
             </div>
             </div>
             <div className="enetry">
-              <TextField id="outlined-basic" type='number' label="Monthly Cost" variant="outlined" className='inputBox' style={{ marginTop: "20px" }} onChange={handleMonthlyCost} />
+              <TextField id="outlined-basic" type='text' label="Monthly Cost" variant="outlined" className='inputBox' style={{ marginTop: "20px" }} onChange={handleMonthlyCost} />
               <div className='desableSecond'>
                 <p>Gross Monthly Profit</p>
                 {totalBedPrice && <h1 >{totalBedPrice}</h1>}
@@ -407,7 +428,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                 {recalm && <h1 >{recalm}</h1>}
               </div>
             </div>
-            <button className="addButton" onClick={addProduct} >Add Item</button>
+            {/* <button className="addButton" onClick={addProduct} >Add Item</button> */}
           </div>
           {/* <div className="calculationBOx">
             <h1>Base Price </h1>
@@ -481,7 +502,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                        
                               
                                {
-                                 parseFloat(recalm) >= 0 ? <span style={{color:"red"}}>{recalm}</span> : <span style={{color:"green"}}>{recalm}</span>
+                                 parseFloat(recalm) >= 0 ? <span style={{color:"red"}}>- {parseFloat(number1) + parseFloat(number2) - netProf}</span> : <span style={{color:"green"}}>{-recalm}</span>
                                }
                              
                            
@@ -519,7 +540,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                        
                               
                                {
-                                 parseFloat(recalm) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) }</span> : <span style={{color:"green"}}>{recalm}</span>
+                                 parseFloat(recalm) >= 0 ? <span style={{color:"red"}}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) }</span> : <span style={{color:"green"}}>{Math.abs(recalm)}</span>
                                }
                              
                            
@@ -558,7 +579,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                        
                               
                                {
-                                 parseFloat(recalm) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))}</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))}</span>
+                                 parseFloat(recalm) >= 0 ? <span style={{color:"red"}}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))}</span> : <span style={{color:"green"}}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))))}</span>
                                }
                              
                            
@@ -599,13 +620,13 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                {
                                  parseFloat(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
-                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  }</span> : <span style={{color:"green"}}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                    }</span>
+                                    )}</span>
                                }
                              
                            
@@ -646,16 +667,16 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                {
                                  parseFloat(recalm -  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
-                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  }</span> : <span style={{color:"green"}}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                    }</span>
+                                    )}</span>
                                }
                              
                            
@@ -697,18 +718,18 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                  parseFloat(recalm - ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
-                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  }</span> : <span style={{color:"green"}}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                    }</span>
+                                    )}</span>
                                }
                              
                            
@@ -751,20 +772,20 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
-                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  }</span> : <span style={{color:"green"}}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                    }</span>
+                                    )}</span>
                                }
                              
                            
@@ -809,14 +830,14 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
-                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))) >= 0 ? <span style={{color:"red"}}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  }</span> : <span style={{color:"green"}}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
@@ -824,7 +845,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                    }</span>
+                                    )}</span>
                                }
                              
                            
@@ -871,7 +892,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))  -
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                 ) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ) >= 0 ? <span style={{color:"red"}}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
@@ -879,7 +900,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  }</span> : <span style={{color:"green"}}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
@@ -888,7 +909,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                    }</span>
+                                    )}</span>
                                }
                              
                            
@@ -936,7 +957,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))  -
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) 
-                                 ) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ) >= 0 ? <span style={{color:"red"}}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
@@ -945,7 +966,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) 
-                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  }</span> : <span style={{color:"green"}}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
@@ -955,7 +976,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) 
-                                    }</span>
+                                    )}</span>
                                }
                              
                            
@@ -1005,7 +1026,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                 ) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ) >= 0 ? <span style={{color:"red"}}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
@@ -1015,7 +1036,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  }</span> : <span style={{color:"green"}}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
@@ -1026,7 +1047,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) 
-                                    }</span>
+                                    )}</span>
                                }
                              
                            
@@ -1078,7 +1099,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                  ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                 ) >= 0 ? <span style={{color:"red"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                 ) >= 0 ? <span style={{color:"red"}}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
@@ -1089,7 +1110,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                   ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                  }</span> : <span style={{color:"green"}}>{recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
+                                  }</span> : <span style={{color:"green"}}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) - 
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
@@ -1101,7 +1122,7 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) -
                                     ((parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)))
-                                    }</span>
+                                    )}</span>
                                }
                              
                            
@@ -1113,6 +1134,17 @@ const netProf = parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2
             </div>
           </div>
         </div>
+        <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <h1>{modTItle}</h1>
+          <TextField id="outlined-basic" type='text' label={modTItle} variant="outlined"   onChange={e => setOneBed2(e.target.value)} className="editBox" />
+        </Box>
+      </Modal>
       </div>
     </div>
   )

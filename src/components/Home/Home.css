@@ -243,6 +243,10 @@ margin-right: 20px;
     height: 50px;
     background: #6E3559;
 }
+.content input{
+    width: 80%;
+    text-align: center;
+}
 .headings {
     width: 200px;
     display: flex;
@@ -309,6 +313,9 @@ margin-right: 20px;
     height: 30px !important;
     border: none;
     padding: 0px !important;
+}
+.editBox{
+width: 100%;
 }
 @media (max-width: 1366px) {
     .desableFirst p {

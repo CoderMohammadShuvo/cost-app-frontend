@@ -317,6 +317,12 @@ margin-right: 20px;
 .editBox{
 width: 100%;
 }
+.inputText{
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+}
 @media (max-width: 1366px) {
     .desableFirst p {
         color: black;

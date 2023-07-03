@@ -258,13 +258,13 @@ margin-right: 20px;
     padding: 10px;
 }
 .tableBodyContent {
-    height: 50vh;
+    height: 100%;
     width: 100%;
 }
-.tableBodyContent{
+/* .tableBodyContent{
     background: rgba(182, 79, 141, 0.25);
 
-}
+} */
 .tableIndi {
     width: 100%;
     height: 40px;
@@ -273,6 +273,9 @@ margin-right: 20px;
 }
 .tableIndi:nth-child(2n+1){
     background: rgba(182, 79, 141, 0.35);
+}
+.tableIndi:nth-child(2n){
+    background: #E8CEDD;
 }
 .content{
     width: 200px;

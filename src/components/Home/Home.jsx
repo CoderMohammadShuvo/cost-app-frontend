@@ -11,7 +11,7 @@ import SettingIcon from '../../images/setting.png';
 import Door from '../../images/door.png';
 import Logo from '../../images/logo.png';
 import User from '../../images/user.png';
-
+import Edit from '../../images/edit.png'
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
@@ -75,6 +75,7 @@ const Home = () => {
   const handleChange = (event) => {
     setAge(event.target.value);
   };
+  const [number01, setNumber01] = useState('0');
   const [number02, setNumber02] = useState('0');
   const [number3, setNumber3] = useState('0');
   const [number4, setNumber4] = useState('0');
@@ -329,6 +330,10 @@ const Home = () => {
   const [fiveBed36, setFiveBed36] = useState('0')
   const [sixBed36, setSixBed36] = useState('0')
 
+  const handlefix1 = (e) => {
+    const value = e.target.value;
+    setNumber2(value);
+  }
   const handlefix0 = (e) => {
     const value = e.target.value;
     setNumber3(value);
@@ -2064,7 +2069,7 @@ const Home = () => {
   };
   const handleClose = () => setOpen(false);
 
-
+  const [active, setActive] = useState();
 
 
   return (
@@ -2280,26 +2285,114 @@ const Home = () => {
 
               <div className="tableIndi">
                 <p className='content' ><span>1st Month</span></p>
-                <p className='content' ><span>{number1}</span></p>
-                <p className='content' ><span>{number2}</span></p>
-                <p className='content' ><span>{parseFloat(number1) + parseFloat(number2)}</span></p>
-                <p className='content' ><span>{monthlyCost}</span></p>
-                <p className='content' ><span>{oneBed}</span></p>
+                <p className='content' ><span></span></p>
+                <div className='content' >
+
+
+                  {
+                    active === 0 ? <input
+                      type="text"
+                      value={number1}
+                      onChange={handlefix1}
+                      className='inputText'
+                    /> : <div className='contentTwoZed'>
+                      <p>{number1}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(0)} />
+                    </div>
+                  }
+                </div>
+                <p className='content' ><span></span></p>
+                <p className='content' ><span>{monthlyCost}</span></p>{ }
+                <div className='content' >
+                  {
+                    active === 1 ? <input
+                      type="text"
+                      value={oneBed}
+                      onChange={handle1bedromPrice}
+                      className='inputText'
+                    /> : <div className='contentTwoZed'>
+                      <p>{oneBed}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(1)} />
+                    </div>
+                  }</div>
                 {
-                  bedroomQUan >= 2 ? <p className='content' ><span>{twoBed}</span></p> : null
+                  bedroomQUan >= 2 ? <div className='content' >
+                    {
+                      active === 2 ? <input
+                        type="text"
+                        value={twoBed}
+                        onChange={handle2bedromPrice}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{twoBed}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(2)} />
+                      </div>
+                    }
+                  </div> : null
                 }
                 {
-                  bedroomQUan >= 3 ? <p className='content' ><span>{threeBed}</span></p> : null
+                  bedroomQUan >= 3 ? <div className='content' >
+                    {
+                      active === 3 ? <input
+                        type="text"
+                        value={threeBed}
+                        onChange={handle3bedromPrice}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{threeBed}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(3)} />
+                      </div>
+                    }
+                  </div> : null
                 }
                 {
-                  bedroomQUan >= 4 ? <p className='content' ><span>{fourBed}</span></p> : null
+                  bedroomQUan >= 4 ? <div className='content' >
+                    {
+                      active === 4 ? <input
+                        type="text"
+                        value={fourBed}
+                        onChange={handle4bedromPrice}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{fourBed}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(4)} />
+                      </div>
+                    }
+                  </div> : null
                 }
                 {
-                  bedroomQUan >= 5 ? <p className='content' ><span>{fiveBed}</span></p> : null
+                  bedroomQUan >= 5 ? <div className='content' >
+                    {
+                      active === 5 ? <input
+                        type="text"
+                        value={fiveBed}
+                        onChange={handle5bedromPrice}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{fiveBed}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(5)} />
+                      </div>
+                    }
+                  </div> : null
                 }
                 {
-                  bedroomQUan >= 6 ? <p className='content' ><span>{sixBed}</span></p> : null
+                  bedroomQUan >= 6 ? <div className='content' >
+                    {
+                      active === 6 ? <input
+                        type="text"
+                        value={sixBed}
+                        onChange={handle6bedromPrice}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{sixBed}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(6)} />
+                      </div>
+                    }
+                  </div> : null
                 }
+
+
+
 
                 <p className='content' > <span>{parseFloat(oneBed) + parseFloat(twoBed) + parseFloat(threeBed) + parseFloat(fourBed) + parseFloat(fiveBed) + parseFloat(sixBed)}</span></p>
                 <p className='content' > <span>{netProf}</span></p>
@@ -2319,59 +2412,109 @@ const Home = () => {
                 age >= 2 ? <div className="tableIndi">
                   <p className='content' ><span>2nd Month</span></p>
                   <p className='content' ><span></span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={number02}
-                    onChange={handlefix0}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+
+
+                    {
+                      active === 7 ? <input
+                        type="text"
+                        value={number02}
+                        onChange={handlefix0}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{number3}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(7)} />
+                      </div>
+                    }
+                  </div>
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>{ }
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed2}
-                    onChange={handle1bedromPrice2}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 8 ? <input
+                        type="text"
+                        value={oneBed2}
+                        onChange={handle1bedromPrice2}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed2}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(8)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed2}
-                      onChange={handle2bedromPrice2}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 9 ? <input
+                          type="text"
+                          value={twoBed2}
+                          onChange={handle2bedromPrice2}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed2}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(9)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed2}
-                      onChange={handle3bedromPrice2}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 10 ? <input
+                          type="text"
+                          value={threeBed2}
+                          onChange={handle3bedromPrice2}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed2}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(10)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed2}
-                      onChange={handle4bedromPrice2}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 11 ? <input
+                          type="text"
+                          value={fourBed2}
+                          onChange={handle4bedromPrice2}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed2}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(11)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed2}
-                      onChange={handle5bedromPrice2}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 12 ? <input
+                          type="text"
+                          value={fiveBed2}
+                          onChange={handle5bedromPrice2}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed2}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(12)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed2}
-                      onChange={handle6bedromPrice2}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 13 ? <input
+                          type="text"
+                          value={sixBed2}
+                          onChange={handle6bedromPrice2}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed2}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(13)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
 
@@ -2394,59 +2537,109 @@ const Home = () => {
                 age >= 3 ? <div className="tableIndi">
                   <p className='content' ><span>3rd Month</span></p>
                   <p className='content' ><span></span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={number3}
-                    onChange={handlefix}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+
+
+                    {
+                      active === 14 ? <input
+                        type="text"
+                        value={number3}
+                        onChange={handlefix}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{number3}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(14)} />
+                      </div>
+                    }
+                  </div>
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed3}
-                    onChange={handle1bedromPrice3}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 15 ? <input
+                        type="text"
+                        value={oneBed3}
+                        onChange={handle1bedromPrice3}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed3}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(15)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed3}
-                      onChange={handle2bedromPrice3}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 16 ? <input
+                          type="text"
+                          value={twoBed3}
+                          onChange={handle3bedromPrice3}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed3}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(16)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed3}
-                      onChange={handle3bedromPrice3}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 17 ? <input
+                          type="text"
+                          value={threeBed3}
+                          onChange={handle3bedromPrice3}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed3}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(17)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed3}
-                      onChange={handle4bedromPrice3}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 18 ? <input
+                          type="text"
+                          value={fourBed3}
+                          onChange={handle4bedromPrice3}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed3}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(18)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed3}
-                      onChange={handle5bedromPrice3}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 19 ? <input
+                          type="text"
+                          value={fiveBed3}
+                          onChange={handle5bedromPrice3}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed3}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(19)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed3}
-                      onChange={handle6bedromPrice3}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 20 ? <input
+                          type="text"
+                          value={sixBed3}
+                          onChange={handle6bedromPrice3}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed3}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(20)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3)}</span></p>
@@ -6587,7 +6780,7 @@ const Home = () => {
                         (parseFloat(oneBed31) + parseFloat(twoBed31) + parseFloat(threeBed31) + parseFloat(fourBed31) + parseFloat(fiveBed31) + parseFloat(sixBed31) - parseFloat(monthlyCost)) -
                         (parseFloat(oneBed32) + parseFloat(twoBed32) + parseFloat(threeBed32) + parseFloat(fourBed32) + parseFloat(fiveBed32) + parseFloat(sixBed32) - parseFloat(monthlyCost)) -
                         (parseFloat(oneBed33) + parseFloat(twoBed33) + parseFloat(threeBed33) + parseFloat(fourBed33) + parseFloat(fiveBed33) + parseFloat(sixBed33) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34) - parseFloat(monthlyCost)) - 
+                        (parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34) - parseFloat(monthlyCost)) -
                         (parseFloat(oneBed35) + parseFloat(twoBed35) + parseFloat(threeBed35) + parseFloat(fourBed35) + parseFloat(fiveBed35) + parseFloat(sixBed35) - parseFloat(monthlyCost))
                         + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16) + parseFloat(number17) + parseFloat(number18) + parseFloat(number19) + parseFloat(number20) + parseFloat(number21) + parseFloat(number22) + parseFloat(number23) + parseFloat(number24) + parseFloat(number25) + parseFloat(number26) + parseFloat(number27) + parseFloat(number28) + parseFloat(number29) + parseFloat(number30) + parseFloat(number31) + parseFloat(number32) + parseFloat(number33) + parseFloat(number34) + parseFloat(number35)) >= 0 ? <span style={{ color: "red" }}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
@@ -6621,7 +6814,7 @@ const Home = () => {
                           (parseFloat(oneBed31) + parseFloat(twoBed31) + parseFloat(threeBed31) + parseFloat(fourBed31) + parseFloat(fiveBed31) + parseFloat(sixBed31) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed32) + parseFloat(twoBed32) + parseFloat(threeBed32) + parseFloat(fourBed32) + parseFloat(fiveBed32) + parseFloat(sixBed32) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed33) + parseFloat(twoBed33) + parseFloat(threeBed33) + parseFloat(fourBed33) + parseFloat(fiveBed33) + parseFloat(sixBed33) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34) - parseFloat(monthlyCost)) - 
+                          (parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed35) + parseFloat(twoBed35) + parseFloat(threeBed35) + parseFloat(fourBed35) + parseFloat(fiveBed35) + parseFloat(sixBed35) - parseFloat(monthlyCost))
                           + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16) + parseFloat(number17) + parseFloat(number18) + parseFloat(number19) + parseFloat(number20) + parseFloat(number21) + parseFloat(number22) + parseFloat(number23) + parseFloat(number24) + parseFloat(number25) + parseFloat(number26) + parseFloat(number27) + parseFloat(number28) + parseFloat(number29) + parseFloat(number30) + parseFloat(number31) + parseFloat(number32) + parseFloat(number33) + parseFloat(number34) + parseFloat(number35)} </span> : <span style={{ color: "green" }}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
@@ -6655,7 +6848,7 @@ const Home = () => {
                             (parseFloat(oneBed31) + parseFloat(twoBed31) + parseFloat(threeBed31) + parseFloat(fourBed31) + parseFloat(fiveBed31) + parseFloat(sixBed31) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed32) + parseFloat(twoBed32) + parseFloat(threeBed32) + parseFloat(fourBed32) + parseFloat(fiveBed32) + parseFloat(sixBed32) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed33) + parseFloat(twoBed33) + parseFloat(threeBed33) + parseFloat(fourBed33) + parseFloat(fiveBed33) + parseFloat(sixBed33) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34) - parseFloat(monthlyCost)) - 
+                            (parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed35) + parseFloat(twoBed35) + parseFloat(threeBed35) + parseFloat(fourBed35) + parseFloat(fiveBed35) + parseFloat(sixBed35) - parseFloat(monthlyCost))
                             + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16)) + parseFloat(number17) + parseFloat(number18) + parseFloat(number19) + parseFloat(number20) + parseFloat(number21) + parseFloat(number22) + parseFloat(number23) + parseFloat(number24) + parseFloat(number25) + parseFloat(number26) + parseFloat(number27) + parseFloat(number28) + parseFloat(number29) + parseFloat(number30) + parseFloat(number31) + parseFloat(number32) + parseFloat(number33) + parseFloat(number34) + parseFloat(number35)}</span>
                     }
@@ -6765,7 +6958,7 @@ const Home = () => {
                         (parseFloat(oneBed31) + parseFloat(twoBed31) + parseFloat(threeBed31) + parseFloat(fourBed31) + parseFloat(fiveBed31) + parseFloat(sixBed31) - parseFloat(monthlyCost)) -
                         (parseFloat(oneBed32) + parseFloat(twoBed32) + parseFloat(threeBed32) + parseFloat(fourBed32) + parseFloat(fiveBed32) + parseFloat(sixBed32) - parseFloat(monthlyCost)) -
                         (parseFloat(oneBed33) + parseFloat(twoBed33) + parseFloat(threeBed33) + parseFloat(fourBed33) + parseFloat(fiveBed33) + parseFloat(sixBed33) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34) - parseFloat(monthlyCost)) - 
+                        (parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34) - parseFloat(monthlyCost)) -
                         (parseFloat(oneBed35) + parseFloat(twoBed35) + parseFloat(threeBed35) + parseFloat(fourBed35) + parseFloat(fiveBed35) + parseFloat(sixBed35) - parseFloat(monthlyCost)) -
                         (parseFloat(oneBed36) + parseFloat(twoBed36) + parseFloat(threeBed36) + parseFloat(fourBed36) + parseFloat(fiveBed36) + parseFloat(sixBed36) - parseFloat(monthlyCost))
                         + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16) + parseFloat(number17) + parseFloat(number18) + parseFloat(number19) + parseFloat(number20) + parseFloat(number21) + parseFloat(number22) + parseFloat(number23) + parseFloat(number24) + parseFloat(number25) + parseFloat(number26) + parseFloat(number27) + parseFloat(number28) + parseFloat(number29) + parseFloat(number30) + parseFloat(number31) + parseFloat(number32) + parseFloat(number33) + parseFloat(number34) + parseFloat(number35) + parseFloat(number36)) >= 0 ? <span style={{ color: "red" }}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
@@ -6800,7 +6993,7 @@ const Home = () => {
                           (parseFloat(oneBed31) + parseFloat(twoBed31) + parseFloat(threeBed31) + parseFloat(fourBed31) + parseFloat(fiveBed31) + parseFloat(sixBed31) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed32) + parseFloat(twoBed32) + parseFloat(threeBed32) + parseFloat(fourBed32) + parseFloat(fiveBed32) + parseFloat(sixBed32) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed33) + parseFloat(twoBed33) + parseFloat(threeBed33) + parseFloat(fourBed33) + parseFloat(fiveBed33) + parseFloat(sixBed33) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34) - parseFloat(monthlyCost)) - 
+                          (parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed35) + parseFloat(twoBed35) + parseFloat(threeBed35) + parseFloat(fourBed35) + parseFloat(fiveBed35) + parseFloat(sixBed35) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed36) + parseFloat(twoBed36) + parseFloat(threeBed36) + parseFloat(fourBed36) + parseFloat(fiveBed36) + parseFloat(sixBed36) - parseFloat(monthlyCost))
                           + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16) + parseFloat(number17) + parseFloat(number18) + parseFloat(number19) + parseFloat(number20) + parseFloat(number21) + parseFloat(number22) + parseFloat(number23) + parseFloat(number24) + parseFloat(number25) + parseFloat(number26) + parseFloat(number27) + parseFloat(number28) + parseFloat(number29) + parseFloat(number30) + parseFloat(number31) + parseFloat(number32) + parseFloat(number33) + parseFloat(number34) + parseFloat(number35) + parseFloat(number36)} </span> : <span style={{ color: "green" }}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
@@ -6835,7 +7028,7 @@ const Home = () => {
                             (parseFloat(oneBed31) + parseFloat(twoBed31) + parseFloat(threeBed31) + parseFloat(fourBed31) + parseFloat(fiveBed31) + parseFloat(sixBed31) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed32) + parseFloat(twoBed32) + parseFloat(threeBed32) + parseFloat(fourBed32) + parseFloat(fiveBed32) + parseFloat(sixBed32) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed33) + parseFloat(twoBed33) + parseFloat(threeBed33) + parseFloat(fourBed33) + parseFloat(fiveBed33) + parseFloat(sixBed33) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34) - parseFloat(monthlyCost)) - 
+                            (parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed35) + parseFloat(twoBed35) + parseFloat(threeBed35) + parseFloat(fourBed35) + parseFloat(fiveBed35) + parseFloat(sixBed35) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed36) + parseFloat(twoBed36) + parseFloat(threeBed36) + parseFloat(fourBed36) + parseFloat(fiveBed36) + parseFloat(sixBed36) - parseFloat(monthlyCost))
                             + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16)) + parseFloat(number17) + parseFloat(number18) + parseFloat(number19) + parseFloat(number20) + parseFloat(number21) + parseFloat(number22) + parseFloat(number23) + parseFloat(number24) + parseFloat(number25) + parseFloat(number26) + parseFloat(number27) + parseFloat(number28) + parseFloat(number29) + parseFloat(number30) + parseFloat(number31) + parseFloat(number32) + parseFloat(number33) + parseFloat(number34) + parseFloat(number35) + parseFloat(number36)}</span>

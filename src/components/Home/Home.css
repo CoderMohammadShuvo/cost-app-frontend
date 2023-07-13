@@ -95,7 +95,7 @@ font-weight: 700;
     height: 49px;
 }
 .inputBoxTwo{
-    width: 14%;
+    width: 10%;
     background: #FFF9F9;
     text-align: left;
     height: 49px;
@@ -342,6 +342,14 @@ width: 100%;
     position: absolute;
     top: 0px;
     right: 5px;
+}
+.closeIcon{
+    height: 40px;
+    cursor: pointer;
+}
+.nameInput{
+    width: 25%;
+
 }
 @media (max-width: 1366px) {
     .desableFirst p {

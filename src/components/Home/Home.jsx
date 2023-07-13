@@ -17,6 +17,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import axios from 'axios';
 import AddButtonIcon from '../../images/plus.png'
+import RemoveButtonIcon from '../../images/close.png'
 
 const style = {
   position: 'absolute',
@@ -2120,6 +2121,7 @@ const Home = () => {
           <div className="entryTable">
             <div className="nameSection">
               <h1>Add New Property Entry</h1>
+              <TextField id="filled-basic" label="Enter Property Name..." variant="filled" className='nameInput' />
             </div>
             <div className="enetry">
               <FormControl className='inputBox'>
@@ -2217,11 +2219,16 @@ const Home = () => {
               {
                 bedroomQUan > 5 ? <TextField id="outlined-basic" type='text' label="6 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{ marginLeft: '10px' }} onChange={handle6bedromPrice} /> : null
               }
+              {
+                bedroomQUan > 1 ?  <img src={RemoveButtonIcon} alt="" className="closeIcon" onClick={() => setBedroomQUan(bedroomQUan - 1)} /> : null
+              }
+             
               <div className="addBedRoomButton" onClick={() => setBedroomQUan(bedroomQUan + 1)}>
 
                 <img src={AddButtonIcon} alt="" className='plusIcon' style={{ marginLeft: '10px' }} />
                 <p>Add Bedroom</p>
               </div>
+             
             </div>
             <div className="enetry">
               <TextField id="outlined-basic" type='text' label="Monthly Cost" variant="outlined" className='inputBox' style={{ marginTop: "20px" }} onChange={handleMonthlyCost} />

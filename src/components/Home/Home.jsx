@@ -2072,7 +2072,17 @@ const Home = () => {
 
   const [active, setActive] = useState();
 
-
+  const currencies = [
+    {
+      value: 'USD',
+      label: 'S',
+    },
+    {
+      value: 'EUR',
+      label: 'D',
+    },
+   
+  ];
   return (
     <div className='homeMain'>
       <div className="menu">
@@ -2204,20 +2214,122 @@ const Home = () => {
             </div>
             <div className="enetryTwooo">
               <TextField id="outlined-basic" type='text' label="1 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle1bedromPrice} />
+              <TextField
+                id="outlined-select-currency"
+                select
+                label="Type"
+                defaultValue="EUR"
+                sx={{
+                  marginTop:"8px",
+ 
+                }}
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
               {
                 bedroomQUan > 1 ? <TextField id="outlined-basic" type='text' label="2 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle2bedromPrice} style={{ marginLeft: '10px' }} /> : null
               }
               {
+                bedroomQUan > 1 ?  <TextField
+                id="outlined-select-currency"
+                select
+                label="Type"
+                defaultValue="EUR"
+                sx={{
+                  marginTop:"8px"
+                }}
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField> : null
+              }
+              
+              {
                 bedroomQUan > 2 ? <TextField id="outlined-basic" type='text' label="3 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle3bedromPrice} style={{ marginLeft: '10px' }} /> : null
+              }
+              {
+                bedroomQUan > 2 ? <TextField
+                id="outlined-select-currency"
+                select
+                label="Type"
+                defaultValue="EUR"
+                sx={{
+                  marginTop:"8px"
+                }}
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField> : null
               }
               {
                 bedroomQUan > 3 ? <TextField id="outlined-basic" type='text' label="4 Bedroom Price" variant="outlined" className='inputBoxTwo' onChange={handle4bedromPrice} style={{ marginLeft: '10px' }} /> : null
               }
               {
+                bedroomQUan > 3 ? <TextField
+                id="outlined-select-currency"
+                select
+                label="Type"
+                defaultValue="EUR"
+                sx={{
+                  marginTop:"8px"
+                }}
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField> : null
+              }
+              {
                 bedroomQUan > 4 ? <TextField id="outlined-basic" type='text' label="5 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{ marginLeft: '10px' }} onChange={handle5bedromPrice} /> : null
               }
               {
+                bedroomQUan > 4 ? <TextField
+                id="outlined-select-currency"
+                select
+                label="Type"
+                defaultValue="EUR"
+                sx={{
+                  marginTop:"8px"
+                }}
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField> : null
+              }
+              {
                 bedroomQUan > 5 ? <TextField id="outlined-basic" type='text' label="6 Bedroom Price" variant="outlined" className='inputBoxTwo' style={{ marginLeft: '10px' }} onChange={handle6bedromPrice} /> : null
+              }
+              {
+                bedroomQUan > 5 ? <TextField
+                id="outlined-select-currency"
+                select
+                label="Type"
+                defaultValue="EUR"
+                sx={{
+                  marginTop:"8px"
+                }}
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField> : null
               }
               {
                 bedroomQUan > 1 ?  <img src={RemoveButtonIcon} alt="" className="closeIcon" onClick={() => setBedroomQUan(bedroomQUan - 1)} /> : null

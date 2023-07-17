@@ -3183,12 +3183,17 @@ const Home = () => {
                 age >= 7 ? <div className="tableIndi">
                   <p className='content' ><span>7th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={number7}
-                    onChange={handlefix5}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >{
+                    active === 42 ? <input
+                      type="text"
+                      value={number7}
+                      onChange={handlefix5}
+                      className='inputText'
+                    /> : <div className='contentTwoZed'>
+                      <p>{number7}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(42)} />
+                    </div>
+                  }</div>
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
                   <div className='content' >
@@ -3315,12 +3320,17 @@ const Home = () => {
                 age >= 8 ? <div className="tableIndi">
                   <p className='content' ><span>8th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' ><input
-                    type="text"
-                    value={number7}
-                    onChange={handlefix6}
-                    className='inputText'
-                  /></p>
+                  <div className='content' >{
+                    active === 49 ? <input
+                      type="text"
+                      value={number8}
+                      onChange={handlefix6}
+                      className='inputText'
+                    /> : <div className='contentTwoZed'>
+                      <p>{number8}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(49)} />
+                    </div>
+                  }</div>
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
                   <div className='content' >
@@ -3452,12 +3462,17 @@ const Home = () => {
                 age >= 9 ? <div className="tableIndi">
                   <p className='content' ><span>9th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' ><input
-                    type="text"
-                    value={number7}
-                    onChange={handlefix6}
-                    className='inputText'
-                  /></p>
+                  <div className='content' >{
+                    active === 56 ? <input
+                      type="text"
+                      value={number9}
+                      onChange={handlefix7}
+                      className='inputText'
+                    /> : <div className='contentTwoZed'>
+                      <p>{number9}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(56)} />
+                    </div>
+                  }</div>
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
                   <div className='content' >
@@ -3592,13 +3607,17 @@ const Home = () => {
                 age >= 10 ? <div className="tableIndi">
                   <p className='content' ><span>10th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 63 ? <input
                       type="text"
                       value={number10}
                       onChange={handlefix8}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number10}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(63)} />
+                    </div>
+                  }</div>
 
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
@@ -3739,13 +3758,17 @@ const Home = () => {
                 age >= 11 ? <div className="tableIndi">
                   <p className='content' ><span>11th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 70 ? <input
                       type="text"
                       value={number11}
                       onChange={handlefix9}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number11}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(70)} />
+                    </div>
+                  }</div>
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
                   <div className='content' >
@@ -3888,13 +3911,19 @@ const Home = () => {
                 age >= 12 ? <div className="tableIndi">
                   <p className='content' ><span>12th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 77 ? <input
                       type="text"
                       value={number12}
                       onChange={handlefix10}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number12}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(77)} />
+                    </div>
+                  }</div>
+
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
                   <div className='content' >
@@ -4041,13 +4070,19 @@ const Home = () => {
                 age >= 13 ? <div className="tableIndi">
                   <p className='content' ><span>13th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 84 ? <input
                       type="text"
                       value={number13}
                       onChange={handlefix11}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number13}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(84)} />
+                    </div>
+                  }</div>
+
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
                   <div className='content' >
@@ -4196,13 +4231,19 @@ const Home = () => {
                 age >= 14 ? <div className="tableIndi">
                   <p className='content' ><span>14th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 91 ? <input
                       type="text"
                       value={number14}
                       onChange={handlefix12}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number14}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(91)} />
+                    </div>
+                  }</div>
+
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
                   <div className='content' >
@@ -4354,13 +4395,19 @@ const Home = () => {
                 age >= 15 ? <div className="tableIndi">
                   <p className='content' ><span>15th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 98 ? <input
                       type="text"
                       value={number15}
                       onChange={handlefix13}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number15}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(98)} />
+                    </div>
+                  }</div>
+
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
                   <div className='content' >
@@ -4515,13 +4562,19 @@ const Home = () => {
                 age >= 16 ? <div className="tableIndi">
                   <p className='content' ><span>16th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 105 ? <input
                       type="text"
                       value={number16}
                       onChange={handlefix14}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number16}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(105)} />
+                    </div>
+                  }</div>
+
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
                   <div className='content' >
@@ -4679,13 +4732,19 @@ const Home = () => {
                 age >= 17 ? <div className="tableIndi">
                   <p className='content' ><span>17th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 112 ? <input
                       type="text"
                       value={number17}
                       onChange={handlefix15}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number17}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(112)} />
+                    </div>
+                  }</div>
+
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
                   <div className='content' >
@@ -4846,13 +4905,19 @@ const Home = () => {
                 age >= 18 ? <div className="tableIndi">
                   <p className='content' ><span>18th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 119 ? <input
                       type="text"
                       value={number18}
                       onChange={handlefix16}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number18}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(119)} />
+                    </div>
+                  }</div>
+
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
                   <div className='content' >
@@ -5016,60 +5081,107 @@ const Home = () => {
                 age >= 19 ? <div className="tableIndi">
                   <p className='content' ><span>19th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 126 ? <input
                       type="text"
                       value={number19}
                       onChange={handlefix17}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number19}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(112)} />
+                    </div>
+                  }</div>
+
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed19}
-                    onChange={handle1bedromPrice19}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 127 ? <input
+                        type="text"
+                        value={oneBed19}
+                        onChange={handle1bedromPrice19}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed19}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(127)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed19}
-                      onChange={handle2bedromPrice19}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 128 ? <input
+                          type="text"
+                          value={twoBed19}
+                          onChange={handle2bedromPrice19}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed19}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(128)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed19}
-                      onChange={handle3bedromPrice19}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 129 ? <input
+                          type="text"
+                          value={threeBed19}
+                          onChange={handle3bedromPrice19}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed19}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(129)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed19}
-                      onChange={handle4bedromPrice19}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 130 ? <input
+                          type="text"
+                          value={fourBed19}
+                          onChange={handle4bedromPrice19}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed19}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(130)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed19}
-                      onChange={handle5bedromPrice19}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 131 ? <input
+                          type="text"
+                          value={fiveBed19}
+                          onChange={handle5bedromPrice19}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed19}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(131)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed19}
-                      onChange={handle6bedromPrice19}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 132 ? <input
+                          type="text"
+                          value={sixBed19}
+                          onChange={handle6bedromPrice19}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed19}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(132)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed19) + parseFloat(twoBed19) + parseFloat(threeBed19) + parseFloat(fourBed19) + parseFloat(fiveBed19) + parseFloat(sixBed19)}</span></p>
@@ -5146,60 +5258,107 @@ const Home = () => {
                 age >= 20 ? <div className="tableIndi">
                   <p className='content' ><span>20th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 133 ? <input
                       type="text"
                       value={number20}
                       onChange={handlefix18}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number20}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(133)} />
+                    </div>
+                  }</div>
+
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed20}
-                    onChange={handle1bedromPrice20}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 134 ? <input
+                        type="text"
+                        value={oneBed20}
+                        onChange={handle1bedromPrice20}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed20}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(134)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed20}
-                      onChange={handle2bedromPrice20}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 135 ? <input
+                          type="text"
+                          value={twoBed20}
+                          onChange={handle2bedromPrice20}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed20}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(135)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed20}
-                      onChange={handle3bedromPrice20}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 136 ? <input
+                          type="text"
+                          value={threeBed20}
+                          onChange={handle3bedromPrice20}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed20}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(136)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed20}
-                      onChange={handle4bedromPrice20}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 137 ? <input
+                          type="text"
+                          value={fourBed20}
+                          onChange={handle4bedromPrice20}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed20}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(137)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed20}
-                      onChange={handle5bedromPrice20}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 138 ? <input
+                          type="text"
+                          value={fiveBed20}
+                          onChange={handle5bedromPrice20}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed20}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(138)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed20}
-                      onChange={handle6bedromPrice20}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 139 ? <input
+                          type="text"
+                          value={sixBed20}
+                          onChange={handle6bedromPrice20}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed20}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(139)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed20) + parseFloat(twoBed20) + parseFloat(threeBed20) + parseFloat(fourBed20) + parseFloat(fiveBed20) + parseFloat(sixBed20)}</span></p>
@@ -5279,60 +5438,107 @@ const Home = () => {
                 age >= 21 ? <div className="tableIndi">
                   <p className='content' ><span>21th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 140 ? <input
                       type="text"
                       value={number21}
                       onChange={handlefix19}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number21}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(140)} />
+                    </div>
+                  }</div>
+
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed21}
-                    onChange={handle1bedromPrice21}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 141 ? <input
+                        type="text"
+                        value={oneBed21}
+                        onChange={handle1bedromPrice21}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed21}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(141)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed21}
-                      onChange={handle2bedromPrice21}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 142 ? <input
+                          type="text"
+                          value={twoBed21}
+                          onChange={handle2bedromPrice21}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed21}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(142)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed21}
-                      onChange={handle3bedromPrice21}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 143 ? <input
+                          type="text"
+                          value={threeBed21}
+                          onChange={handle3bedromPrice21}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed21}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(143)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed21}
-                      onChange={handle4bedromPrice21}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 144 ? <input
+                          type="text"
+                          value={fourBed21}
+                          onChange={handle4bedromPrice21}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed21}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(144)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed21}
-                      onChange={handle5bedromPrice21}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 145 ? <input
+                          type="text"
+                          value={fiveBed21}
+                          onChange={handle5bedromPrice21}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed21}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(145)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed21}
-                      onChange={handle6bedromPrice21}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 146 ? <input
+                          type="text"
+                          value={sixBed21}
+                          onChange={handle6bedromPrice21}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed21}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(146)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed21) + parseFloat(twoBed21) + parseFloat(threeBed21) + parseFloat(fourBed21) + parseFloat(fiveBed21) + parseFloat(sixBed21)}</span></p>
@@ -5415,60 +5621,107 @@ const Home = () => {
                 age >= 22 ? <div className="tableIndi">
                   <p className='content' ><span>22th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 147 ? <input
                       type="text"
                       value={number22}
                       onChange={handlefix20}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number22}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(147)} />
+                    </div>
+                  }</div>
+
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed22}
-                    onChange={handle1bedromPrice22}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 148 ? <input
+                        type="text"
+                        value={oneBed22}
+                        onChange={handle1bedromPrice22}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed22}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(148)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed22}
-                      onChange={handle2bedromPrice22}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 149 ? <input
+                          type="text"
+                          value={twoBed22}
+                          onChange={handle2bedromPrice22}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed22}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(149)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed22}
-                      onChange={handle3bedromPrice22}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 150 ? <input
+                          type="text"
+                          value={threeBed22}
+                          onChange={handle3bedromPrice22}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed22}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(150)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed22}
-                      onChange={handle4bedromPrice22}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 151 ? <input
+                          type="text"
+                          value={fourBed22}
+                          onChange={handle4bedromPrice22}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed22}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(151)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed22}
-                      onChange={handle5bedromPrice22}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 152 ? <input
+                          type="text"
+                          value={fiveBed22}
+                          onChange={handle5bedromPrice22}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed22}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(152)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed22}
-                      onChange={handle6bedromPrice22}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 153 ? <input
+                          type="text"
+                          value={sixBed22}
+                          onChange={handle6bedromPrice22}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed22}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(153)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed22) + parseFloat(twoBed22) + parseFloat(threeBed22) + parseFloat(fourBed22) + parseFloat(fiveBed22) + parseFloat(sixBed22)}</span></p>
@@ -5554,60 +5807,107 @@ const Home = () => {
                 age >= 23 ? <div className="tableIndi">
                   <p className='content' ><span>23th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 154 ? <input
                       type="text"
                       value={number23}
                       onChange={handlefix21}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number23}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(154)} />
+                    </div>
+                  }</div>
+
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed23}
-                    onChange={handle1bedromPrice23}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 155 ? <input
+                        type="text"
+                        value={oneBed23}
+                        onChange={handle1bedromPrice23}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed23}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(155)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed23}
-                      onChange={handle2bedromPrice23}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 156 ? <input
+                          type="text"
+                          value={twoBed23}
+                          onChange={handle2bedromPrice23}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed23}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(156)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed23}
-                      onChange={handle3bedromPrice23}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 157 ? <input
+                          type="text"
+                          value={threeBed23}
+                          onChange={handle3bedromPrice23}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed23}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(157)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed23}
-                      onChange={handle4bedromPrice23}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 158 ? <input
+                          type="text"
+                          value={fourBed23}
+                          onChange={handle4bedromPrice23}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed23}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(158)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed23}
-                      onChange={handle5bedromPrice23}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 159 ? <input
+                          type="text"
+                          value={fiveBed23}
+                          onChange={handle5bedromPrice23}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed23}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(159)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed23}
-                      onChange={handle6bedromPrice23}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 160 ? <input
+                          type="text"
+                          value={sixBed23}
+                          onChange={handle6bedromPrice23}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed23}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(160)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed23) + parseFloat(twoBed23) + parseFloat(threeBed23) + parseFloat(fourBed23) + parseFloat(fiveBed23) + parseFloat(sixBed23)}</span></p>
@@ -5696,62 +5996,108 @@ const Home = () => {
                 age >= 24 ? <div className="tableIndi">
                   <p className='content' ><span>24th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 161 ? <input
                       type="text"
                       value={number24}
                       onChange={handlefix22}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number24}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(161)} />
+                    </div>
+                  }</div>
+
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed24}
-                    onChange={handle1bedromPrice24}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 162 ? <input
+                        type="text"
+                        value={oneBed24}
+                        onChange={handle1bedromPrice24}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed24}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(162)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed24}
-                      onChange={handle2bedromPrice24}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 163 ? <input
+                          type="text"
+                          value={twoBed24}
+                          onChange={handle2bedromPrice24}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed24}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(163)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed24}
-                      onChange={handle3bedromPrice24}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 164 ? <input
+                          type="text"
+                          value={threeBed24}
+                          onChange={handle3bedromPrice24}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed24}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(164)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed24}
-                      onChange={handle4bedromPrice24}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 165 ? <input
+                          type="text"
+                          value={fourBed24}
+                          onChange={handle4bedromPrice24}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed24}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(165)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed24}
-                      onChange={handle5bedromPrice24}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 166 ? <input
+                          type="text"
+                          value={fiveBed24}
+                          onChange={handle5bedromPrice24}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed24}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(166)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed24}
-                      onChange={handle6bedromPrice24}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 167 ? <input
+                          type="text"
+                          value={sixBed24}
+                          onChange={handle6bedromPrice24}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed24}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(167)} />
+                        </div>
+                      }
+                    </div> : null
                   }
-
                   <p className='content' > <span>{parseFloat(oneBed24) + parseFloat(twoBed24) + parseFloat(threeBed24) + parseFloat(fourBed24) + parseFloat(fiveBed24) + parseFloat(sixBed24)}</span></p>
                   <p className='content' > <span>{parseFloat(oneBed24) + parseFloat(twoBed24) + parseFloat(threeBed24) + parseFloat(fourBed24) + parseFloat(fiveBed24) + parseFloat(sixBed24) - parseFloat(monthlyCost)}</span></p>
                   <p className='content' >
@@ -5841,60 +6187,106 @@ const Home = () => {
                 age >= 25 ? <div className="tableIndi">
                   <p className='content' ><span>25th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 168 ? <input
                       type="text"
                       value={number25}
                       onChange={handlefix23}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number25}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(168)} />
+                    </div>
+                  }</div>
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed25}
-                    onChange={handle1bedromPrice25}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 169 ? <input
+                        type="text"
+                        value={oneBed25}
+                        onChange={handle1bedromPrice25}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed25}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(169)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed25}
-                      onChange={handle2bedromPrice25}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 170 ? <input
+                          type="text"
+                          value={twoBed25}
+                          onChange={handle2bedromPrice25}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed25}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(170)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed25}
-                      onChange={handle3bedromPrice25}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 171 ? <input
+                          type="text"
+                          value={threeBed25}
+                          onChange={handle3bedromPrice25}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed25}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(171)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed25}
-                      onChange={handle4bedromPrice25}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 172 ? <input
+                          type="text"
+                          value={fourBed25}
+                          onChange={handle4bedromPrice25}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed25}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(172)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed25}
-                      onChange={handle5bedromPrice25}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 173 ? <input
+                          type="text"
+                          value={fiveBed25}
+                          onChange={handle5bedromPrice25}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed25}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(173)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed25}
-                      onChange={handle6bedromPrice25}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 174 ? <input
+                          type="text"
+                          value={sixBed25}
+                          onChange={handle6bedromPrice25}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed25}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(174)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed25) + parseFloat(twoBed25) + parseFloat(threeBed25) + parseFloat(fourBed25) + parseFloat(fiveBed25) + parseFloat(sixBed25)}</span></p>
@@ -5989,60 +6381,106 @@ const Home = () => {
                 age >= 26 ? <div className="tableIndi">
                   <p className='content' ><span>26th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
+                  <div className='content' >{
+                    active === 175 ? <input
                       type="text"
                       value={number26}
                       onChange={handlefix24}
                       className='inputText'
-                    /></p>
+                    /> : <div className='contentTwoZed'>
+                      <p>{number26}</p>
+                      <img src={Edit} alt="" onClick={() => setActive(175)} />
+                    </div>
+                  }</div>
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed26}
-                    onChange={handle1bedromPrice26}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 176 ? <input
+                        type="text"
+                        value={oneBed26}
+                        onChange={handle1bedromPrice26}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed26}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(176)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed26}
-                      onChange={handle2bedromPrice26}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 177 ? <input
+                          type="text"
+                          value={twoBed26}
+                          onChange={handle2bedromPrice26}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed26}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(177)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed26}
-                      onChange={handle3bedromPrice26}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 178 ? <input
+                          type="text"
+                          value={threeBed26}
+                          onChange={handle3bedromPrice26}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed26}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(178)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed26}
-                      onChange={handle4bedromPrice26}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 179 ? <input
+                          type="text"
+                          value={fourBed26}
+                          onChange={handle4bedromPrice26}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed26}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(179)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed26}
-                      onChange={handle5bedromPrice26}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 180 ? <input
+                          type="text"
+                          value={fiveBed26}
+                          onChange={handle5bedromPrice26}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed26}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(180)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed26}
-                      onChange={handle6bedromPrice26}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 181 ? <input
+                          type="text"
+                          value={sixBed26}
+                          onChange={handle6bedromPrice26}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed26}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(181)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed26) + parseFloat(twoBed26) + parseFloat(threeBed26) + parseFloat(fourBed26) + parseFloat(fiveBed26) + parseFloat(sixBed26)}</span></p>
@@ -6140,60 +6578,106 @@ const Home = () => {
                 age >= 27 ? <div className="tableIndi">
                   <p className='content' ><span>27th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
-                      type="text"
-                      value={number27}
-                      onChange={handlefix25}
-                      className='inputText'
-                    /></p>
+                  <div className='content' >{
+    active === 182 ? <input
+      type="text"
+      value={number27}
+      onChange={handlefix25}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{number27}</p>
+      <img src={Edit} alt="" onClick={() => setActive(182)} />
+    </div>
+  }</div>
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed27}
-                    onChange={handle1bedromPrice27}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 183 ? <input
+                        type="text"
+                        value={oneBed27}
+                        onChange={handle1bedromPrice27}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed27}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(183)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed27}
-                      onChange={handle2bedromPrice27}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 184 ? <input
+                          type="text"
+                          value={twoBed27}
+                          onChange={handle2bedromPrice27}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed27}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(184)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed27}
-                      onChange={handle3bedromPrice27}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 185 ? <input
+                          type="text"
+                          value={threeBed27}
+                          onChange={handle3bedromPrice27}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed27}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(185)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed27}
-                      onChange={handle4bedromPrice27}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 186 ? <input
+                          type="text"
+                          value={fourBed27}
+                          onChange={handle4bedromPrice27}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed27}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(186)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed27}
-                      onChange={handle5bedromPrice27}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 187 ? <input
+                          type="text"
+                          value={fiveBed27}
+                          onChange={handle5bedromPrice27}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed27}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(187)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed27}
-                      onChange={handle6bedromPrice27}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 188 ? <input
+                          type="text"
+                          value={sixBed27}
+                          onChange={handle6bedromPrice27}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed27}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(188)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed27) + parseFloat(twoBed27) + parseFloat(threeBed27) + parseFloat(fourBed27) + parseFloat(fiveBed27) + parseFloat(sixBed27)}</span></p>
@@ -6294,60 +6778,106 @@ const Home = () => {
                 age >= 28 ? <div className="tableIndi">
                   <p className='content' ><span>28th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
-                      type="text"
-                      value={number28}
-                      onChange={handlefix26}
-                      className='inputText'
-                    /></p>
+                  <div className='content' >{
+    active === 189 ? <input
+      type="text"
+      value={number28}
+      onChange={handlefix26}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{number28}</p>
+      <img src={Edit} alt="" onClick={() => setActive(189)} />
+    </div>
+  }</div>
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed28}
-                    onChange={handle1bedromPrice28}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 190 ? <input
+                        type="text"
+                        value={oneBed28}
+                        onChange={handle1bedromPrice28}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed28}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(190)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed28}
-                      onChange={handle2bedromPrice28}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 191 ? <input
+                          type="text"
+                          value={twoBed28}
+                          onChange={handle2bedromPrice28}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed28}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(191)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed28}
-                      onChange={handle3bedromPrice28}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 192 ? <input
+                          type="text"
+                          value={threeBed28}
+                          onChange={handle3bedromPrice28}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed28}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(192)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed28}
-                      onChange={handle4bedromPrice28}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 193 ? <input
+                          type="text"
+                          value={fourBed28}
+                          onChange={handle4bedromPrice28}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed28}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(193)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed28}
-                      onChange={handle5bedromPrice28}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 194 ? <input
+                          type="text"
+                          value={fiveBed28}
+                          onChange={handle5bedromPrice28}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed28}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(194)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed28}
-                      onChange={handle6bedromPrice28}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 195 ? <input
+                          type="text"
+                          value={sixBed28}
+                          onChange={handle6bedromPrice28}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed28}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(188)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed28) + parseFloat(twoBed28) + parseFloat(threeBed28) + parseFloat(fourBed28) + parseFloat(fiveBed28) + parseFloat(sixBed28)}</span></p>
@@ -6451,60 +6981,106 @@ const Home = () => {
                 age >= 29 ? <div className="tableIndi">
                   <p className='content' ><span>29th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
-                      type="text"
-                      value={number29}
-                      onChange={handlefix27}
-                      className='inputText'
-                    /></p>
+                  <div className='content' >{
+    active === 196 ? <input
+      type="text"
+      value={number29}
+      onChange={handlefix27}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{number29}</p>
+      <img src={Edit} alt="" onClick={() => setActive(196)} />
+    </div>
+  }</div>
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed29}
-                    onChange={handle1bedromPrice29}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 197 ? <input
+                        type="text"
+                        value={oneBed29}
+                        onChange={handle1bedromPrice29}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed29}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(197)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed29}
-                      onChange={handle2bedromPrice29}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 198 ? <input
+                          type="text"
+                          value={twoBed29}
+                          onChange={handle2bedromPrice29}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed29}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(198)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed29}
-                      onChange={handle3bedromPrice29}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 199 ? <input
+                          type="text"
+                          value={threeBed29}
+                          onChange={handle3bedromPrice29}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed29}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(199)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed29}
-                      onChange={handle4bedromPrice29}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 200 ? <input
+                          type="text"
+                          value={fourBed29}
+                          onChange={handle4bedromPrice29}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed29}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(200)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed29}
-                      onChange={handle5bedromPrice29}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 201 ? <input
+                          type="text"
+                          value={fiveBed29}
+                          onChange={handle5bedromPrice29}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed29}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(201)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed29}
-                      onChange={handle6bedromPrice29}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 202 ? <input
+                          type="text"
+                          value={sixBed29}
+                          onChange={handle6bedromPrice29}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed29}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(202)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed29) + parseFloat(twoBed29) + parseFloat(threeBed29) + parseFloat(fourBed29) + parseFloat(fiveBed29) + parseFloat(sixBed29)}</span></p>
@@ -6611,60 +7187,106 @@ const Home = () => {
                 age >= 30 ? <div className="tableIndi">
                   <p className='content' ><span>30th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
-                      type="text"
-                      value={number30}
-                      onChange={handlefix28}
-                      className='inputText'
-                    /></p>
+                  <div className='content' >{
+    active === 203 ? <input
+      type="text"
+      value={number30}
+      onChange={handlefix28}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{number30}</p>
+      <img src={Edit} alt="" onClick={() => setActive(203)} />
+    </div>
+  }</div>
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed30}
-                    onChange={handle1bedromPrice30}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 204 ? <input
+                        type="text"
+                        value={oneBed30}
+                        onChange={handle1bedromPrice30}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed30}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(204)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed30}
-                      onChange={handle2bedromPrice30}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 205 ? <input
+                          type="text"
+                          value={twoBed30}
+                          onChange={handle2bedromPrice30}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed30}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(205)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed30}
-                      onChange={handle3bedromPrice30}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 206 ? <input
+                          type="text"
+                          value={threeBed30}
+                          onChange={handle3bedromPrice30}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed30}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(206)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed30}
-                      onChange={handle4bedromPrice30}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 207 ? <input
+                          type="text"
+                          value={fourBed30}
+                          onChange={handle4bedromPrice30}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed30}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(207)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed30}
-                      onChange={handle5bedromPrice30}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 208 ? <input
+                          type="text"
+                          value={fiveBed30}
+                          onChange={handle5bedromPrice30}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed30}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(208)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed30}
-                      onChange={handle6bedromPrice30}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 209 ? <input
+                          type="text"
+                          value={sixBed30}
+                          onChange={handle6bedromPrice30}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed30}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(209)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed30) + parseFloat(twoBed30) + parseFloat(threeBed30) + parseFloat(fourBed30) + parseFloat(fiveBed30) + parseFloat(sixBed30)}</span></p>
@@ -6774,60 +7396,106 @@ const Home = () => {
                 age >= 31 ? <div className="tableIndi">
                   <p className='content' ><span>31th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
-                      type="text"
-                      value={number31}
-                      onChange={handlefix29}
-                      className='inputText'
-                    /></p>
+                  <div className='content' >{
+    active === 210 ? <input
+      type="text"
+      value={number31}
+      onChange={handlefix29}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{number31}</p>
+      <img src={Edit} alt="" onClick={() => setActive(210)} />
+    </div>
+  }</div>
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed31}
-                    onChange={handle1bedromPrice31}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 211 ? <input
+                        type="text"
+                        value={oneBed31}
+                        onChange={handle1bedromPrice31}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed31}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(211)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed31}
-                      onChange={handle2bedromPrice31}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 212 ? <input
+                          type="text"
+                          value={twoBed31}
+                          onChange={handle2bedromPrice31}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed31}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(212)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed31}
-                      onChange={handle3bedromPrice31}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 213 ? <input
+                          type="text"
+                          value={threeBed31}
+                          onChange={handle3bedromPrice31}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed31}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(213)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed31}
-                      onChange={handle4bedromPrice31}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 214 ? <input
+                          type="text"
+                          value={fourBed31}
+                          onChange={handle4bedromPrice31}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed31}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(214)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed31}
-                      onChange={handle5bedromPrice31}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 215 ? <input
+                          type="text"
+                          value={fiveBed31}
+                          onChange={handle5bedromPrice31}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed31}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(215)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed31}
-                      onChange={handle6bedromPrice31}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 216 ? <input
+                          type="text"
+                          value={sixBed31}
+                          onChange={handle6bedromPrice31}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed31}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(216)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed31) + parseFloat(twoBed31) + parseFloat(threeBed31) + parseFloat(fourBed31) + parseFloat(fiveBed31) + parseFloat(sixBed31)}</span></p>
@@ -6940,62 +7608,107 @@ const Home = () => {
                 age >= 32 ? <div className="tableIndi">
                   <p className='content' ><span>32th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
-                      type="text"
-                      value={number32}
-                      onChange={handlefix30}
-                      className='inputText'
-                    /></p>
+                  <div className='content' >{
+    active === 217 ? <input
+      type="text"
+      value={number32}
+      onChange={handlefix30}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{number32}</p>
+      <img src={Edit} alt="" onClick={() => setActive(217)} />
+    </div>
+  }</div>
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed32}
-                    onChange={handle1bedromPrice32}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 218 ? <input
+                        type="text"
+                        value={oneBed32}
+                        onChange={handle1bedromPrice32}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed32}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(218)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed32}
-                      onChange={handle2bedromPrice32}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 219 ? <input
+                          type="text"
+                          value={twoBed32}
+                          onChange={handle2bedromPrice32}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed32}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(219)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed32}
-                      onChange={handle3bedromPrice32}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 220 ? <input
+                          type="text"
+                          value={threeBed32}
+                          onChange={handle3bedromPrice32}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed32}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(220)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed32}
-                      onChange={handle4bedromPrice32}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 221 ? <input
+                          type="text"
+                          value={fourBed32}
+                          onChange={handle4bedromPrice32}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed32}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(221)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed32}
-                      onChange={handle5bedromPrice32}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 222 ? <input
+                          type="text"
+                          value={fiveBed32}
+                          onChange={handle5bedromPrice32}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed32}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(222)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed32}
-                      onChange={handle6bedromPrice32}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 223 ? <input
+                          type="text"
+                          value={sixBed32}
+                          onChange={handle6bedromPrice32}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed32}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(223)} />
+                        </div>
+                      }
+                    </div> : null
                   }
-
                   <p className='content' > <span>{parseFloat(oneBed32) + parseFloat(twoBed32) + parseFloat(threeBed32) + parseFloat(fourBed32) + parseFloat(fiveBed32) + parseFloat(sixBed32)}</span></p>
                   <p className='content' > <span>{parseFloat(oneBed32) + parseFloat(twoBed32) + parseFloat(threeBed32) + parseFloat(fourBed32) + parseFloat(fiveBed32) + parseFloat(sixBed32) - parseFloat(monthlyCost)}</span></p>
                   <p className='content' >
@@ -7108,60 +7821,106 @@ const Home = () => {
                 age >= 33 ? <div className="tableIndi">
                   <p className='content' ><span>33th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
-                      type="text"
-                      value={number33}
-                      onChange={handlefix31}
-                      className='inputText'
-                    /></p>
+                  <div className='content' >{
+    active === 224 ? <input
+      type="text"
+      value={number33}
+      onChange={handlefix31}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{number33}</p>
+      <img src={Edit} alt="" onClick={() => setActive(224)} />
+    </div>
+  }</div>
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed33}
-                    onChange={handle1bedromPrice33}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 225 ? <input
+                        type="text"
+                        value={oneBed33}
+                        onChange={handle1bedromPrice33}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed33}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(225)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed33}
-                      onChange={handle2bedromPrice33}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 226 ? <input
+                          type="text"
+                          value={twoBed33}
+                          onChange={handle2bedromPrice33}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed33}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(226)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed33}
-                      onChange={handle3bedromPrice33}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 227 ? <input
+                          type="text"
+                          value={threeBed33}
+                          onChange={handle3bedromPrice33}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed33}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(227)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed33}
-                      onChange={handle4bedromPrice33}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 228 ? <input
+                          type="text"
+                          value={fourBed33}
+                          onChange={handle4bedromPrice33}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed33}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(228)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed33}
-                      onChange={handle5bedromPrice33}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 229 ? <input
+                          type="text"
+                          value={fiveBed33}
+                          onChange={handle5bedromPrice33}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed33}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(229)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed33}
-                      onChange={handle6bedromPrice33}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 230 ? <input
+                          type="text"
+                          value={sixBed33}
+                          onChange={handle6bedromPrice33}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed33}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(230)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed33) + parseFloat(twoBed33) + parseFloat(threeBed33) + parseFloat(fourBed33) + parseFloat(fiveBed33) + parseFloat(sixBed33)}</span></p>
@@ -7280,62 +8039,107 @@ const Home = () => {
                 age >= 34 ? <div className="tableIndi">
                   <p className='content' ><span>34th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
-                      type="text"
-                      value={number34}
-                      onChange={handlefix32}
-                      className='inputText'
-                    /></p>
+                  <div className='content' >{
+    active === 231 ? <input
+      type="text"
+      value={number34}
+      onChange={handlefix32}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{number34}</p>
+      <img src={Edit} alt="" onClick={() => setActive(231)} />
+    </div>
+  }</div>
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed34}
-                    onChange={handle1bedromPrice34}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 232 ? <input
+                        type="text"
+                        value={oneBed34}
+                        onChange={handle1bedromPrice34}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed34}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(232)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed34}
-                      onChange={handle2bedromPrice34}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 233 ? <input
+                          type="text"
+                          value={twoBed34}
+                          onChange={handle2bedromPrice34}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed34}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(233)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed34}
-                      onChange={handle3bedromPrice34}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 234 ? <input
+                          type="text"
+                          value={threeBed34}
+                          onChange={handle3bedromPrice34}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed34}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(234)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed34}
-                      onChange={handle4bedromPrice34}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 235 ? <input
+                          type="text"
+                          value={fourBed34}
+                          onChange={handle4bedromPrice34}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed34}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(235)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed34}
-                      onChange={handle5bedromPrice34}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 236 ? <input
+                          type="text"
+                          value={fiveBed34}
+                          onChange={handle5bedromPrice34}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed34}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(236)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed34}
-                      onChange={handle6bedromPrice34}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 237 ? <input
+                          type="text"
+                          value={sixBed34}
+                          onChange={handle6bedromPrice34}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed34}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(237)} />
+                        </div>
+                      }
+                    </div> : null
                   }
-
                   <p className='content' > <span>{parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34)}</span></p>
                   <p className='content' > <span>{parseFloat(oneBed34) + parseFloat(twoBed34) + parseFloat(threeBed34) + parseFloat(fourBed34) + parseFloat(fiveBed34) + parseFloat(sixBed34) - parseFloat(monthlyCost)}</span></p>
                   <p className='content' >
@@ -7455,60 +8259,106 @@ const Home = () => {
                 age >= 35 ? <div className="tableIndi">
                   <p className='content' ><span>35th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
-                      type="text"
-                      value={number35}
-                      onChange={handlefix33}
-                      className='inputText'
-                    /></p>
+                  <div className='content' >{
+    active === 238 ? <input
+      type="text"
+      value={number35}
+      onChange={handlefix33}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{number35}</p>
+      <img src={Edit} alt="" onClick={() => setActive(238)} />
+    </div>
+  }</div>
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed35}
-                    onChange={handle1bedromPrice35}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 239 ? <input
+                        type="text"
+                        value={oneBed35}
+                        onChange={handle1bedromPrice35}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed35}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(239)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed35}
-                      onChange={handle2bedromPrice35}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 240 ? <input
+                          type="text"
+                          value={twoBed35}
+                          onChange={handle2bedromPrice35}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed35}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(240)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed35}
-                      onChange={handle3bedromPrice35}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 241 ? <input
+                          type="text"
+                          value={threeBed35}
+                          onChange={handle3bedromPrice35}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed35}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(241)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed35}
-                      onChange={handle4bedromPrice35}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 242 ? <input
+                          type="text"
+                          value={fourBed35}
+                          onChange={handle4bedromPrice35}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed35}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(242)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed35}
-                      onChange={handle5bedromPrice35}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 243 ? <input
+                          type="text"
+                          value={fiveBed35}
+                          onChange={handle5bedromPrice35}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed35}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(243)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed35}
-                      onChange={handle6bedromPrice35}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 244 ? <input
+                          type="text"
+                          value={sixBed35}
+                          onChange={handle6bedromPrice35}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed35}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(244)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed35) + parseFloat(twoBed35) + parseFloat(threeBed35) + parseFloat(fourBed35) + parseFloat(fiveBed35) + parseFloat(sixBed35)}</span></p>
@@ -7633,60 +8483,106 @@ const Home = () => {
                 age >= 36 ? <div className="tableIndi">
                   <p className='content' ><span>36th Month</span></p>
                   <p className='content' ><span></span></p>
-                  <p className='content' >
-                    <input
-                      type="text"
-                      value={number36}
-                      onChange={handlefix34}
-                      className='inputText'
-                    /></p>
+                  <div className='content' >{
+    active === 245 ? <input
+      type="text"
+      value={number36}
+      onChange={handlefix34}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{number36}</p>
+      <img src={Edit} alt="" onClick={() => setActive(245)} />
+    </div>
+  }</div>
+
                   <p className='content' ><span></span></p>
                   <p className='content' ><span>{monthlyCost}</span></p>
-                  <div className='content' ><input
-                    type="text"
-                    value={oneBed36}
-                    onChange={handle1bedromPrice36}
-                    className='inputText'
-                  /></div>
+                  <div className='content' >
+                    {
+                      active === 246 ? <input
+                        type="text"
+                        value={oneBed36}
+                        onChange={handle1bedromPrice36}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBed36}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(246)} />
+                      </div>
+                    }</div>
                   {
-                    bedroomQUan >= 2 ? <div className='content' ><input
-                      type="text"
-                      value={twoBed36}
-                      onChange={handle2bedromPrice36}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 247 ? <input
+                          type="text"
+                          value={twoBed36}
+                          onChange={handle2bedromPrice36}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBed36}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(247)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 3 ? <div className='content' ><input
-                      type="text"
-                      value={threeBed36}
-                      onChange={handle3bedromPrice36}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 3 ? <div className='content' >
+                      {
+                        active === 248 ? <input
+                          type="text"
+                          value={threeBed36}
+                          onChange={handle3bedromPrice36}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBed36}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(248)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 4 ? <div className='content' ><input
-                      type="text"
-                      value={fourBed36}
-                      onChange={handle4bedromPrice36}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 4 ? <div className='content' >
+                      {
+                        active === 249 ? <input
+                          type="text"
+                          value={fourBed36}
+                          onChange={handle4bedromPrice36}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fourBed36}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(249)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 5 ? <div className='content' ><input
-                      type="text"
-                      value={fiveBed36}
-                      onChange={handle5bedromPrice36}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 5 ? <div className='content' >
+                      {
+                        active === 250 ? <input
+                          type="text"
+                          value={fiveBed36}
+                          onChange={handle5bedromPrice36}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{fiveBed36}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(250)} />
+                        </div>
+                      }
+                    </div> : null
                   }
                   {
-                    bedroomQUan >= 6 ? <div className='content' ><input
-                      type="text"
-                      value={sixBed36}
-                      onChange={handle6bedromPrice36}
-                      className='inputText'
-                    /></div> : null
+                    bedroomQUan >= 6 ? <div className='content' >
+                      {
+                        active === 251 ? <input
+                          type="text"
+                          value={sixBed36}
+                          onChange={handle6bedromPrice36}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{sixBed36}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(251)} />
+                        </div>
+                      }
+                    </div> : null
                   }
 
                   <p className='content' > <span>{parseFloat(oneBed36) + parseFloat(twoBed36) + parseFloat(threeBed36) + parseFloat(fourBed36) + parseFloat(fiveBed36) + parseFloat(sixBed36)}</span></p>

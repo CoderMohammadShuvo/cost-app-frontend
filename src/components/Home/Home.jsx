@@ -337,7 +337,7 @@ const Home = () => {
   }
   const handlefix0 = (e) => {
     const value = e.target.value;
-    setNumber3(value);
+    setNumber02(value);
   }
   const handlefix = (e) => {
     const value = e.target.value;
@@ -524,7 +524,11 @@ const Home = () => {
     // setOneBed10(value)
     calculateSumBed(value, twoBed, threeBed, fourBed, fiveBed, sixBed);
   };
-
+  const handle1bedromPriceAn = (e) => {
+    const value = e.target.value;
+    setOneBed(value);
+    calculateSumBed(value, twoBed, threeBed, fourBed, fiveBed, sixBed);
+  }
   const handle2bedromPrice = (e) => {
     const value = e.target.value;
     setTowBed(value);
@@ -730,6 +734,7 @@ const Home = () => {
     setSixBed36(value);
     calculateSumBed(value, twoBed, threeBed, oneBed, fourBed, fiveBed);
   };
+ 
   const handle1bedromPrice2 = (e) => {
     const value = e.target.value;
     setOneBed2(value)
@@ -1937,7 +1942,7 @@ const Home = () => {
   const handleMonthlyCost = (e) => {
     const value = e.target.value;
     setMonthlyCost(value);
-    calculateNetProfit(value);
+    calculateNetProfit(value);   
   };
 
 
@@ -2404,109 +2409,72 @@ const Home = () => {
 
               <div className="tableIndi">
                 <p className='content' ><span>1st Month</span></p>
-                <p className='content' ><span></span></p>
+                <p className='content' ><span>{parseFloat(number1)}</span></p>
                 <div className='content' >
 
 
-                  {
-                    active === 0 ? <input
-                      type="text"
-                      value={number1}
-                      onChange={handlefix1}
-                      className='inputText'
-                    /> : <div className='contentTwoZed'>
-                      <p>{number1}</p>
-                      <img src={Edit} alt="" onClick={() => setActive(0)} />
+                   <div className='contentTwoZed'>
+                  
+                  
+                  
+                  
+                  
+                  
+                      <p>{number2}</p>
+                      {/* <img src={Edit} alt="" onClick={() => setActive(0)} /> */}
                     </div>
-                  }
+                
                 </div>
-                <p className='content' ><span></span></p>
+                <p className='content' ><span>{parseFloat(number1) + parseFloat(number2)}</span></p>
                 <p className='content' ><span>{monthlyCost}</span></p>{ }
                 <div className='content' >
-                  {
-                    active === 1 ? <input
-                      type="text"
-                      value={oneBed}
-                      onChange={handle1bedromPrice}
-                      className='inputText'
-                    /> : <div className='contentTwoZed'>
-                      <p>{oneBed}</p>
-                      <img src={Edit} alt="" onClick={() => setActive(1)} />
-                    </div>
-                  }</div>
+                <div className='contentTwoZed'>
+      <p>{oneBed}</p>
+      {/* <img src={Edit} alt="" onClick={() => setActive(1)} /> */}
+    </div></div>
                 {
                   bedroomQUan >= 2 ? <div className='content' >
-                    {
-                      active === 2 ? <input
-                        type="text"
-                        value={twoBed}
-                        onChange={handle2bedromPrice}
-                        className='inputText'
-                      /> : <div className='contentTwoZed'>
+                     <div className='contentTwoZed'>
                         <p>{twoBed}</p>
-                        <img src={Edit} alt="" onClick={() => setActive(2)} />
+                    
                       </div>
-                    }
+                 
                   </div> : null
                 }
                 {
                   bedroomQUan >= 3 ? <div className='content' >
-                    {
-                      active === 3 ? <input
-                        type="text"
-                        value={threeBed}
-                        onChange={handle3bedromPrice}
-                        className='inputText'
-                      /> : <div className='contentTwoZed'>
+                    <div className='contentTwoZed'>
                         <p>{threeBed}</p>
-                        <img src={Edit} alt="" onClick={() => setActive(3)} />
+              
                       </div>
-                    }
+                    
                   </div> : null
                 }
                 {
                   bedroomQUan >= 4 ? <div className='content' >
-                    {
-                      active === 4 ? <input
-                        type="text"
-                        value={fourBed}
-                        onChange={handle4bedromPrice}
-                        className='inputText'
-                      /> : <div className='contentTwoZed'>
+                    <div className='contentTwoZed'>
                         <p>{fourBed}</p>
-                        <img src={Edit} alt="" onClick={() => setActive(4)} />
+                     
                       </div>
-                    }
+                    
                   </div> : null
                 }
                 {
                   bedroomQUan >= 5 ? <div className='content' >
-                    {
-                      active === 5 ? <input
-                        type="text"
-                        value={fiveBed}
-                        onChange={handle5bedromPrice}
-                        className='inputText'
-                      /> : <div className='contentTwoZed'>
+                     <div className='contentTwoZed'>
                         <p>{fiveBed}</p>
-                        <img src={Edit} alt="" onClick={() => setActive(5)} />
+             
                       </div>
-                    }
+                    
                   </div> : null
                 }
                 {
                   bedroomQUan >= 6 ? <div className='content' >
-                    {
-                      active === 6 ? <input
-                        type="text"
-                        value={sixBed}
-                        onChange={handle6bedromPrice}
-                        className='inputText'
-                      /> : <div className='contentTwoZed'>
+                    <div className='contentTwoZed'>
                         <p>{sixBed}</p>
-                        <img src={Edit} alt="" onClick={() => setActive(6)} />
+                        
                       </div>
-                    }
+                    
                   </div> : null
                 }
 
@@ -2514,12 +2482,12 @@ const Home = () => {
 
 
                 <p className='content' > <span>{parseFloat(oneBed) + parseFloat(twoBed) + parseFloat(threeBed) + parseFloat(fourBed) + parseFloat(fiveBed) + parseFloat(sixBed)}</span></p>
-                <p className='content' > <span>{netProf}</span></p>
+                <p className='content' > <span>{parseFloat(oneBed) + parseFloat(twoBed) + parseFloat(threeBed) + parseFloat(fourBed) + parseFloat(fiveBed) - parseFloat(sixBed) - parseFloat(monthlyCost)}</span></p>
                 <p className='content' >
 
 
                   {
-                    parseFloat(recalm) >= 0 ? <span style={{ color: "red" }}>- {parseFloat(number1) + parseFloat(number2) - netProf}</span> : <span style={{ color: "green" }}>{-recalm}</span>
+                    parseFloat(recalm) >= 0 ? <span style={{ color: "red" }}>- {parseFloat(number1) + parseFloat(number2) - parseFloat(monthlyCost)}</span> : <span style={{ color: "green" }}>{-recalm}</span>
                   }
 
 
@@ -2541,7 +2509,7 @@ const Home = () => {
                         onChange={handlefix0}
                         className='inputText'
                       /> : <div className='contentTwoZed'>
-                        <p>{number3}</p>
+                        <p>{number02}</p>
                         <img src={Edit} alt="" onClick={() => setActive(7)} />
                       </div>
                     }
@@ -2784,7 +2752,7 @@ const Home = () => {
 
 
                     {
-                      active === 21 ? <input
+                      active === 15 ? <input
                         type="text"
                         value={number4}
                         onChange={handlefix2}
@@ -5082,7 +5050,7 @@ const Home = () => {
                   <p className='content' ><span>19th Month</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
-                    active === 126 ? <input
+                    active === 112 ? <input
                       type="text"
                       value={number19}
                       onChange={handlefix17}

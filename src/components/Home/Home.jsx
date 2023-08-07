@@ -120,8 +120,11 @@ const Home = () => {
   const [result, setResult] = useState('');
   const [totalBedPrice, setTotalBedPRice] = useState('');
   const [oneBed, setOneBed] = useState('0')
+  const [oneBedEdit, setOneBedEdit] = useState('0');
   const [twoBed, setTowBed] = useState('0')
+  const [twoBedEdit, setTowBedEdit] = useState('0')
   const [threeBed, setThreeBed] = useState('0')
+  const [threeBedEdit, setThreeBedEdit] = useState('0')
   const [fourBed, setFourBed] = useState('0')
   const [fiveBed, setFiveBed] = useState('0')
   const [sixBed, setSixBed] = useState('0')
@@ -484,6 +487,7 @@ const Home = () => {
 
   const handle1bedromPrice = (e) => {
     const value = e.target.value;
+    setOneBedEdit(value);
     setOneBed(value);
     setOneBed2(value);
     setOneBed3(value)
@@ -536,6 +540,7 @@ const Home = () => {
   }
   const handle2bedromPrice = (e) => {
     const value = e.target.value;
+    setTowBedEdit(value)
     setTowBed(value);
     setTowBed2(value);
     setTowBed3(value);
@@ -578,6 +583,7 @@ const Home = () => {
 
   const handle3bedromPrice = (e) => {
     const value = e.target.value;
+    setThreeBedEdit(value)
     setThreeBed(value);
     setThreeBed2(value);
     setThreeBed3(value);
@@ -745,7 +751,22 @@ const Home = () => {
     setOneBed2(value)
     calculateSumBed(value, twoBed2, threeBed2, fourBed2, fiveBed2, sixBed2);
   };
-
+  
+  const handle1bedromPriceEdit = (e) => {
+    const value = e.target.value;
+    setOneBedEdit(value)
+    calculateSumBed(value, twoBed, threeBed, fourBed, fiveBed, sixBed);
+  };
+  const handle2bedromPriceEdit = (e) => {
+    const value = e.target.value;
+    setTowBedEdit(value)
+    calculateSumBed(value, oneBed, threeBed, fourBed, fiveBed, sixBed);
+  };
+  const handle3bedromPriceEdit = (e) => {
+    const value = e.target.value;
+    setThreeBedEdit(value)
+    
+  };
   const handle2bedromPrice2 = (e) => {
     const value = e.target.value;
     setTowBed2(value);
@@ -2099,8 +2120,8 @@ const Home = () => {
       // Step 3: Generate or fetch your data here
       const data = [
         ['Time Span', 'Money Down', 'Fix Up Cost', 'Upfront Investment', 'Monthly Cost', '1st Bedroom Price', bedroomQUan >= 2 ? "2nd Bedroom Price" : null, bedroomQUan >= 3 ? "3rd Bedroom Price" : null, bedroomQUan >= 4 ? "4th Bedroom Price" : null, bedroomQUan >= 5 ? "5th Bedroom Price" : null, bedroomQUan >= 6 ? "6th Bedroom Price" : null, "Gross Montly Profit", "Monthly Net Profit", "Gross Reclaim/Return of Investmentt"],
-        ['1st Month', parseFloat(number1), number2, parseFloat(number1) + parseFloat(number2), monthlyCost, oneBed, bedroomQUan >= 2 ? twoBed : null,bedroomQUan >= 3 ? threeBed : null, bedroomQUan >= 4 ? fourBed : null,bedroomQUan >= 5 ? fiveBed : null,bedroomQUan >= 6 ? sixBed : null, parseFloat(oneBed) + parseFloat(twoBed) + parseFloat(threeBed) + parseFloat(fourBed) + parseFloat(fiveBed) + parseFloat(sixBed), parseFloat(oneBed) + parseFloat(twoBed) + parseFloat(threeBed) + parseFloat(fourBed) + parseFloat(fiveBed) - parseFloat(sixBed) - parseFloat(monthlyCost), parseFloat(recalm) >= 0 ? - (parseFloat(number1) + parseFloat(number2) - (parseFloat(oneBed) + parseFloat(twoBed) + parseFloat(threeBed) + parseFloat(fourBed) + parseFloat(fiveBed) - parseFloat(sixBed) - parseFloat(monthlyCost))) : -recalm],
-        ['2nd Month', "", number02, "", monthlyCost, oneBed2, bedroomQUan >= 2 ? twoBed2 : null,bedroomQUan >= 3 ? threeBed2 : null, bedroomQUan >= 4 ? fourBed2 : null,bedroomQUan >= 5 ? fiveBed2 : null,bedroomQUan >= 6 ? sixBed2 : null, parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2), parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost), parseFloat(recalm) >= 0 ? - (parseFloat(number1) + parseFloat(number2) - (parseFloat(oneBed) + parseFloat(twoBed) + parseFloat(threeBed) + parseFloat(fourBed) + parseFloat(fiveBed) - parseFloat(sixBed) - parseFloat(monthlyCost)) - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) : Math.abs(recalm)],
+        ['1st Month', parseFloat(number1), number2, parseFloat(number1) + parseFloat(number2), monthlyCost, oneBed, bedroomQUan >= 2 ? twoBed : null,bedroomQUan >= 3 ? threeBed : null, bedroomQUan >= 4 ? fourBed : null,bedroomQUan >= 5 ? fiveBed : null,bedroomQUan >= 6 ? sixBed : null, parseFloat(oneBedEdit) + parseFloat(twoBedEdit) + parseFloat(threeBedEdit) + parseFloat(fourBed) + parseFloat(fiveBed) + parseFloat(sixBed), parseFloat(oneBedEdit) + parseFloat(twoBedEdit) + parseFloat(threeBedEdit) + parseFloat(fourBed) + parseFloat(fiveBed) - parseFloat(sixBed) - parseFloat(monthlyCost), parseFloat(recalm) >= 0 ? - (parseFloat(number1) + parseFloat(number2) - (parseFloat(oneBedEdit) + parseFloat(twoBedEdit) + parseFloat(threeBedEdit) + parseFloat(fourBed) + parseFloat(fiveBed) - parseFloat(sixBed) - parseFloat(monthlyCost))) : -recalm],
+        ['2nd Month', "", number02, "", monthlyCost, oneBed2, bedroomQUan >= 2 ? twoBed2 : null,bedroomQUan >= 3 ? threeBed2 : null, bedroomQUan >= 4 ? fourBed2 : null,bedroomQUan >= 5 ? fiveBed2 : null,bedroomQUan >= 6 ? sixBed2 : null, parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2), parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost), parseFloat(recalm) >= 0 ? - (parseFloat(number1) + parseFloat(number2) - (parseFloat(oneBedEdit) + parseFloat(twoBedEdit) + parseFloat(threeBedEdit) + parseFloat(fourBed) + parseFloat(fiveBed) - parseFloat(sixBed) - parseFloat(monthlyCost)) - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))) : Math.abs(recalm)],
         ['3rd Month', "", number3, "", monthlyCost, oneBed3, bedroomQUan >= 2 ? twoBed3 : null,bedroomQUan >= 3 ? threeBed3 : null, bedroomQUan >= 4 ? fourBed3 : null,bedroomQUan >= 5 ? fiveBed3 : null,bedroomQUan >= 5 ? sixBed3 : null, parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3), parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost), parseFloat(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) + parseFloat(number3)) >= 0 ? -(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) - (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) + parseFloat(number3)) : Math.abs(recalm - (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) - ((parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost))))],
         ['4th Month', "", number4, "", monthlyCost, oneBed4, bedroomQUan >= 2 ? twoBed4 : null,bedroomQUan >= 3 ? threeBed4 : null, bedroomQUan >= 4 ? fourBed4 : null,bedroomQUan >= 5 ? fiveBed4 : null,bedroomQUan >= 5 ? sixBed4 : null, parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4), parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost), parseFloat(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
         (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
@@ -4062,25 +4083,54 @@ const Home = () => {
                 <p className='content' ><span>{parseFloat(number1) + parseFloat(number2)}</span></p>
                 <p className='content' ><span>{monthlyCost}</span></p>{ }
                 <div className='content' >
-                  <div className='contentTwoZed'>
-                    <p>{oneBed}</p>
-                    {/* <img src={Edit} alt="" onClick={() => setActive(1)} /> */}
-                  </div></div>
+                 
+
+                  {
+                      active === 2 ? <input
+                        type="text"
+                        value={oneBedEdit}
+                        onChange={handle1bedromPriceEdit}
+                        className='inputText'
+                      /> : <div className='contentTwoZed'>
+                        <p>{oneBedEdit}</p>
+                        <img src={Edit} alt="" onClick={() => setActive(2)} />
+                      </div>
+                    }
+                  </div>
                 {
-                  bedroomQUan >= 2 ? <div className='content' >
-                    <div className='contentTwoZed'>
-                      <p>{twoBed}</p>
+                    bedroomQUan >= 2 ? <div className='content' >
+                      {
+                        active === 3 ? <input
+                          type="text"
+                          value={twoBedEdit}
+                          onChange={handle2bedromPriceEdit}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{twoBedEdit}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(3)} />
+                        </div>
+                      }
+                    </div> : null
+                  }
 
-                    </div>
-
-                  </div> : null
-                }
                 {
                   bedroomQUan >= 3 ? <div className='content' >
-                    <div className='contentTwoZed'>
+                    {/* <div className='contentTwoZed'>
                       <p>{threeBed}</p>
 
-                    </div>
+                    </div> */}
+
+{
+                        active === 4 ? <input
+                          type="text"
+                          value={threeBedEdit}
+                          onChange={handle3bedromPriceEdit}
+                          className='inputText'
+                        /> : <div className='contentTwoZed'>
+                          <p>{threeBedEdit}</p>
+                          <img src={Edit} alt="" onClick={() => setActive(4)} />
+                        </div>
+                      }
 
                   </div> : null
                 }
@@ -4115,13 +4165,13 @@ const Home = () => {
 
 
 
-                <p className='content' > <span>{parseFloat(oneBed) + parseFloat(twoBed) + parseFloat(threeBed) + parseFloat(fourBed) + parseFloat(fiveBed) + parseFloat(sixBed)}</span></p>
-                <p className='content' > <span>{parseFloat(oneBed) + parseFloat(twoBed) + parseFloat(threeBed) + parseFloat(fourBed) + parseFloat(fiveBed) - parseFloat(sixBed) - parseFloat(monthlyCost)}</span></p>
+                <p className='content' > <span>{parseFloat(oneBedEdit) + parseFloat(twoBedEdit) + parseFloat(threeBedEdit) + parseFloat(fourBed) + parseFloat(fiveBed) + parseFloat(sixBed)}</span></p>
+                <p className='content' > <span>{parseFloat(oneBedEdit) + parseFloat(twoBedEdit) + parseFloat(threeBedEdit) + parseFloat(fourBed) + parseFloat(fiveBed) - parseFloat(sixBed) - parseFloat(monthlyCost)}</span></p>
                 <p className='content' >
 
 
                   {
-                    parseFloat(recalm) >= 0 ? <span style={{ color: "red" }}>- {parseFloat(number1) + parseFloat(number2) - (parseFloat(oneBed) + parseFloat(twoBed) + parseFloat(threeBed) + parseFloat(fourBed) + parseFloat(fiveBed) - parseFloat(sixBed) - parseFloat(monthlyCost))}</span> : <span style={{ color: "green" }}>{-recalm}</span>
+                    parseFloat(recalm) >= 0 ? <span style={{ color: "red" }}>- {parseFloat(number1) + parseFloat(number2) - (parseFloat(oneBedEdit) + parseFloat(twoBedEdit) + parseFloat(threeBedEdit) + parseFloat(fourBed) + parseFloat(fiveBed) - parseFloat(sixBed) - parseFloat(monthlyCost))}</span> : <span style={{ color: "green" }}>{-recalm}</span>
                   }
 
 
@@ -4245,7 +4295,7 @@ const Home = () => {
 
 
                     {
-                      parseFloat(recalm) >= 0 ? <span style={{ color: "red" }}>- {parseFloat(number1) + parseFloat(number2) - (parseFloat(oneBed) + parseFloat(twoBed) + parseFloat(threeBed) + parseFloat(fourBed) + parseFloat(fiveBed) - parseFloat(sixBed) - parseFloat(monthlyCost)) - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))}</span> : <span style={{ color: "green" }}>{Math.abs(recalm)}</span>   
+                      parseFloat(recalm) >= 0 ? <span style={{ color: "red" }}>- {parseFloat(number1) + parseFloat(number2) - (parseFloat(oneBedEdit) + parseFloat(twoBedEdit) + parseFloat(threeBedEdit) + parseFloat(fourBed) + parseFloat(fiveBed) - parseFloat(sixBed) - parseFloat(monthlyCost)) - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost))}</span> : <span style={{ color: "green" }}>{Math.abs(recalm)}</span>   
                     }
 
 

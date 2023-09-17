@@ -3746,8 +3746,35 @@ const Home = () => {
     };
   
     /////
-    
+    const [startDateMain, setStartDate] = useState('');
 
+    function getNext36Months(startDate) {
+      const inputDate = new Date(startDate);
+      const months = [];
+    
+      const monthNames = [
+        'Jan', 'Feb', 'Mar', 'Apr',
+        'May', 'Jun', 'Jul', 'Aug',
+        'Sep', 'Oct', 'Nov', 'Dec'
+      ]
+    
+      for (let i = 0; i < 36; i++) {
+        inputDate.setMonth(inputDate.getMonth() + 1);
+        const month = monthNames[inputDate.getMonth()];
+        const year = inputDate.getFullYear();
+        const day = inputDate.getDate();
+        const formattedDate = `${day}, ${month}, ${year}`;
+        months.push(formattedDate);
+      }
+    
+      return months;
+    }
+    
+    // Example usage:
+    console.log(startDateMain)
+    const inputDate = '2022-08-01';
+    const resultSTart = getNext36Months(startDateMain);
+    console.log(resultSTart[0]);
   return (
     <div className='homeMain'>
       <div className="menu">
@@ -3796,6 +3823,7 @@ const Home = () => {
           <div className="entryTable">
             <div className="nameSection">
               <h1>Add New Property Entry</h1>
+              <input type="date" name="date" id="" onChange={(e) => setStartDate(e.target.value)} />
               <TextField id="filled-basic" label="Enter Property Name..." variant="filled" className='nameInput' onChange={(e) => setPropertyName(e.target.value)} />
             </div>
             <div className="enetry">
@@ -3808,42 +3836,42 @@ const Home = () => {
                   label="Time Span"
                   onChange={handleChange}
                 >
-                  <MenuItem value={1}>1st Month</MenuItem>
-                  <MenuItem value={2}>2nd Month</MenuItem>
-                  <MenuItem value={3}>3rd Month</MenuItem>
-                  <MenuItem value={4}>4th Month</MenuItem>
-                  <MenuItem value={5}>5th Month</MenuItem>
-                  <MenuItem value={6}>6th Month</MenuItem>
-                  <MenuItem value={7}>7th Month</MenuItem>
-                  <MenuItem value={8}>8th Month</MenuItem>
-                  <MenuItem value={9}>9th Month</MenuItem>
-                  <MenuItem value={10}>10th Month</MenuItem>
-                  <MenuItem value={11}>11th Month</MenuItem>
-                  <MenuItem value={12}>12th Month</MenuItem>
-                  <MenuItem value={13}>13th Month</MenuItem>
-                  <MenuItem value={14}>14th Month</MenuItem>
-                  <MenuItem value={15}>15th Month</MenuItem>
-                  <MenuItem value={16}>16th Month</MenuItem>
-                  <MenuItem value={17}>17th Month</MenuItem>
-                  <MenuItem value={18}>18th Month</MenuItem>
-                  <MenuItem value={19}>19th Month</MenuItem>
-                  <MenuItem value={20}>20th Month</MenuItem>
-                  <MenuItem value={21}>21th Month</MenuItem>
-                  <MenuItem value={22}>22th Month</MenuItem>
-                  <MenuItem value={23}>23th Month</MenuItem>
-                  <MenuItem value={24}>24th Month</MenuItem>
-                  <MenuItem value={25}>25th Month</MenuItem>
-                  <MenuItem value={26}>26th Month</MenuItem>
-                  <MenuItem value={27}>27th Month</MenuItem>
-                  <MenuItem value={28}>28th Month</MenuItem>
-                  <MenuItem value={29}>29th Month</MenuItem>
-                  <MenuItem value={30}>30th Month</MenuItem>
-                  <MenuItem value={31}>31th Month</MenuItem>
-                  <MenuItem value={32}>32th Month</MenuItem>
-                  <MenuItem value={33}>33th Month</MenuItem>
-                  <MenuItem value={34}>34th Month</MenuItem>
-                  <MenuItem value={35}>35th Month</MenuItem>
-                  <MenuItem value={36}>36th Month</MenuItem>
+                  <MenuItem value={1}>{resultSTart[0]}</MenuItem>
+                  <MenuItem value={2}>{resultSTart[1]}</MenuItem>
+                  <MenuItem value={3}>{resultSTart[2]}</MenuItem>
+                  <MenuItem value={4}>{resultSTart[3]}</MenuItem>
+                  <MenuItem value={5}>{resultSTart[4]}</MenuItem>
+                  <MenuItem value={6}>{resultSTart[5]}</MenuItem>
+                  <MenuItem value={7}>{resultSTart[6]}</MenuItem>
+                  <MenuItem value={8}>{resultSTart[7]}</MenuItem>
+                  <MenuItem value={9}>{resultSTart[8]}</MenuItem>
+                  <MenuItem value={10}>{resultSTart[9]}</MenuItem>
+                  <MenuItem value={11}>{resultSTart[10]}</MenuItem>
+                  <MenuItem value={12}>{resultSTart[11]}</MenuItem>
+                  <MenuItem value={13}>{resultSTart[12]}</MenuItem>
+                  <MenuItem value={14}>{resultSTart[13]}</MenuItem>
+                  <MenuItem value={15}>{resultSTart[14]}</MenuItem>
+                  <MenuItem value={16}>{resultSTart[15]}</MenuItem>
+                  <MenuItem value={17}>{resultSTart[16]}</MenuItem>
+                  <MenuItem value={18}>{resultSTart[17]}</MenuItem>
+                  <MenuItem value={19}>{resultSTart[18]}</MenuItem>
+                  <MenuItem value={20}>{resultSTart[19]}</MenuItem>
+                  <MenuItem value={21}>{resultSTart[20]}</MenuItem>
+                  <MenuItem value={22}>{resultSTart[21]}</MenuItem>
+                  <MenuItem value={23}>{resultSTart[22]}</MenuItem>
+                  <MenuItem value={24}>{resultSTart[23]}</MenuItem>
+                  <MenuItem value={25}>{resultSTart[24]}</MenuItem>
+                  <MenuItem value={26}>{resultSTart[25]}</MenuItem>
+                  <MenuItem value={27}>{resultSTart[26]}</MenuItem>
+                  <MenuItem value={28}>{resultSTart[27]}</MenuItem>
+                  <MenuItem value={29}>{resultSTart[28]}</MenuItem>
+                  <MenuItem value={30}>{resultSTart[29]}</MenuItem>
+                  <MenuItem value={31}>{resultSTart[30]}</MenuItem>
+                  <MenuItem value={32}>{resultSTart[31]}</MenuItem>
+                  <MenuItem value={33}>{resultSTart[32]}</MenuItem>
+                  <MenuItem value={34}>{resultSTart[33]}</MenuItem>
+                  <MenuItem value={35}>{resultSTart[34]}</MenuItem>
+                  <MenuItem value={36}>{resultSTart[35]}</MenuItem>
 
                 </Select>
               </FormControl>
@@ -4069,7 +4097,7 @@ const Home = () => {
             <div className="tableBodyContent">
 
               <div className="tableIndi">
-                <p className='content' ><span>1st Month</span></p>
+                <p className='content' ><span>{resultSTart[0]}</span></p>
                 <p className='content' ><span>{parseFloat(number1)}</span></p>
                 <div className='content' >
 
@@ -4181,7 +4209,7 @@ const Home = () => {
               </div>
               {
                 age >= 2 ? <div className="tableIndi">
-                  <p className='content' ><span>2nd Month</span></p>
+                  <p className='content' ><span>{resultSTart[1]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >
 
@@ -4306,7 +4334,7 @@ const Home = () => {
               }
               {
                 age >= 3 ? <div className="tableIndi">
-                  <p className='content' ><span>3rd Month</span></p>
+                  <p className='content' ><span>{resultSTart[2]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >
 
@@ -4430,7 +4458,7 @@ const Home = () => {
               }
               {
                 age >= 4 ? <div className="tableIndi">
-                  <p className='content' ><span>4th Month</span></p>
+                  <p className='content' ><span>{resultSTart[3]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >
 
@@ -4564,7 +4592,7 @@ const Home = () => {
               }
               {
                 age >= 5 ? <div className="tableIndi">
-                  <p className='content' ><span>5th Month</span></p>
+                  <p className='content' ><span>{resultSTart[4]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 28 ? <input
@@ -4697,7 +4725,7 @@ const Home = () => {
               }
               {
                 age >= 6 ? <div className="tableIndi">
-                  <p className='content' ><span>6th Month</span></p>
+                  <p className='content' ><span>{resultSTart[5]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 35 ? <input
@@ -4833,7 +4861,7 @@ const Home = () => {
               }
               {
                 age >= 7 ? <div className="tableIndi">
-                  <p className='content' ><span>7th Month</span></p>
+                  <p className='content' ><span>{resultSTart[6]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 42 ? <input
@@ -4970,7 +4998,7 @@ const Home = () => {
               }
               {
                 age >= 8 ? <div className="tableIndi">
-                  <p className='content' ><span>8th Month</span></p>
+                  <p className='content' ><span>{resultSTart[7]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 49 ? <input
@@ -5112,7 +5140,7 @@ const Home = () => {
               }
               {
                 age >= 9 ? <div className="tableIndi">
-                  <p className='content' ><span>9th Month</span></p>
+                  <p className='content' ><span>{resultSTart[8]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 56 ? <input
@@ -5257,7 +5285,7 @@ const Home = () => {
               }
               {
                 age >= 10 ? <div className="tableIndi">
-                  <p className='content' ><span>10th Month</span></p>
+                  <p className='content' ><span>{resultSTart[9]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 63 ? <input
@@ -5408,7 +5436,7 @@ const Home = () => {
 
               {
                 age >= 11 ? <div className="tableIndi">
-                  <p className='content' ><span>11th Month</span></p>
+                  <p className='content' ><span>{resultSTart[10]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 70 ? <input
@@ -5561,7 +5589,7 @@ const Home = () => {
 
               {
                 age >= 12 ? <div className="tableIndi">
-                  <p className='content' ><span>12th Month</span></p>
+                  <p className='content' ><span>{resultSTart[11]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 77 ? <input
@@ -5720,7 +5748,7 @@ const Home = () => {
 
               {
                 age >= 13 ? <div className="tableIndi">
-                  <p className='content' ><span>13th Month</span></p>
+                  <p className='content' ><span>{resultSTart[12]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 84 ? <input
@@ -5881,7 +5909,7 @@ const Home = () => {
 
               {
                 age >= 14 ? <div className="tableIndi">
-                  <p className='content' ><span>14th Month</span></p>
+                  <p className='content' ><span>{resultSTart[13]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 91 ? <input
@@ -6045,7 +6073,7 @@ const Home = () => {
 
               {
                 age >= 15 ? <div className="tableIndi">
-                  <p className='content' ><span>15th Month</span></p>
+                  <p className='content' ><span>{resultSTart[14]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 98 ? <input
@@ -6212,7 +6240,7 @@ const Home = () => {
               }
               {
                 age >= 16 ? <div className="tableIndi">
-                  <p className='content' ><span>16th Month</span></p>
+                  <p className='content' ><span>{resultSTart[15]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 105 ? <input
@@ -6382,7 +6410,7 @@ const Home = () => {
               }
               {
                 age >= 17 ? <div className="tableIndi">
-                  <p className='content' ><span>17th Month</span></p>
+                  <p className='content' ><span>{resultSTart[16]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 112 ? <input
@@ -6555,7 +6583,7 @@ const Home = () => {
               }
               {
                 age >= 18 ? <div className="tableIndi">
-                  <p className='content' ><span>18th Month</span></p>
+                  <p className='content' ><span>{resultSTart[17]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 119 ? <input
@@ -6731,7 +6759,7 @@ const Home = () => {
               }
               {
                 age >= 19 ? <div className="tableIndi">
-                  <p className='content' ><span>19th Month</span></p>
+                  <p className='content' ><span>{resultSTart[18]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 112 ? <input
@@ -6908,7 +6936,7 @@ const Home = () => {
               }
               {
                 age >= 20 ? <div className="tableIndi">
-                  <p className='content' ><span>20th Month</span></p>
+                  <p className='content' ><span>{resultSTart[19]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 133 ? <input
@@ -7088,7 +7116,7 @@ const Home = () => {
               }
               {
                 age >= 21 ? <div className="tableIndi">
-                  <p className='content' ><span>21th Month</span></p>
+                  <p className='content' ><span>{resultSTart[20]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 140 ? <input
@@ -7271,7 +7299,7 @@ const Home = () => {
               }
               {
                 age >= 22 ? <div className="tableIndi">
-                  <p className='content' ><span>22th Month</span></p>
+                  <p className='content' ><span>{resultSTart[21]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 147 ? <input
@@ -7457,7 +7485,7 @@ const Home = () => {
               }
               {
                 age >= 23 ? <div className="tableIndi">
-                  <p className='content' ><span>23th Month</span></p>
+                  <p className='content' ><span>{resultSTart[22]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 154 ? <input
@@ -7646,7 +7674,7 @@ const Home = () => {
               }
               {
                 age >= 24 ? <div className="tableIndi">
-                  <p className='content' ><span>24th Month</span></p>
+                  <p className='content' ><span>{resultSTart[23]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 161 ? <input
@@ -7837,7 +7865,7 @@ const Home = () => {
               }
               {
                 age >= 25 ? <div className="tableIndi">
-                  <p className='content' ><span>25th Month</span></p>
+                  <p className='content' ><span>{resultSTart[24]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 168 ? <input
@@ -8031,7 +8059,7 @@ const Home = () => {
               }
               {
                 age >= 26 ? <div className="tableIndi">
-                  <p className='content' ><span>26th Month</span></p>
+                  <p className='content' ><span>{resultSTart[25]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 175 ? <input
@@ -8228,7 +8256,7 @@ const Home = () => {
               }
               {
                 age >= 27 ? <div className="tableIndi">
-                  <p className='content' ><span>27th Month</span></p>
+                  <p className='content' ><span>{resultSTart[26]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 182 ? <input
@@ -8428,7 +8456,7 @@ const Home = () => {
               }
               {
                 age >= 28 ? <div className="tableIndi">
-                  <p className='content' ><span>28th Month</span></p>
+                  <p className='content' ><span>{resultSTart[27]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 189 ? <input
@@ -8631,7 +8659,7 @@ const Home = () => {
               }
               {
                 age >= 29 ? <div className="tableIndi">
-                  <p className='content' ><span>29th Month</span></p>
+                  <p className='content' ><span>{resultSTart[28]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 196 ? <input
@@ -8837,7 +8865,7 @@ const Home = () => {
               }
               {
                 age >= 30 ? <div className="tableIndi">
-                  <p className='content' ><span>30th Month</span></p>
+                  <p className='content' ><span>{resultSTart[29]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 203 ? <input
@@ -9046,7 +9074,7 @@ const Home = () => {
               }
               {
                 age >= 31 ? <div className="tableIndi">
-                  <p className='content' ><span>31th Month</span></p>
+                  <p className='content' ><span>{resultSTart[30]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 210 ? <input
@@ -9258,7 +9286,7 @@ const Home = () => {
               }
               {
                 age >= 32 ? <div className="tableIndi">
-                  <p className='content' ><span>32th Month</span></p>
+                  <p className='content' ><span>{resultSTart[31]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 217 ? <input
@@ -9468,7 +9496,7 @@ const Home = () => {
                 </div> : null
               }   {
                 age >= 33 ? <div className="tableIndi">
-                  <p className='content' ><span>33th Month</span></p>
+                  <p className='content' ><span>{resultSTart[32]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 224 ? <input
@@ -9686,7 +9714,7 @@ const Home = () => {
               }
               {
                 age >= 34 ? <div className="tableIndi">
-                  <p className='content' ><span>34th Month</span></p>
+                  <p className='content' ><span>{resultSTart[33]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 231 ? <input
@@ -9906,7 +9934,7 @@ const Home = () => {
               }
               {
                 age >= 35 ? <div className="tableIndi">
-                  <p className='content' ><span>35th Month</span></p>
+                  <p className='content' ><span>{resultSTart[34]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 238 ? <input
@@ -10130,7 +10158,7 @@ const Home = () => {
               }
               {
                 age >= 36 ? <div className="tableIndi">
-                  <p className='content' ><span>36th Month</span></p>
+                  <p className='content' ><span>{resultSTart[35]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 245 ? <input

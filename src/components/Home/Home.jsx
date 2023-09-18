@@ -3896,7 +3896,10 @@ const Home = () => {
           <div className="entryTable">
             <div className="nameSection">
               <h1>Add New Property Entry</h1>
-              <input type="date" name="date" id="" onChange={(e) => setStartDate(e.target.value)} />
+              <div>
+              <label htmlFor="date">Enter Start Date:</label> <br />
+              <input type="date" name="date" id="" onChange={(e) => setStartDate(e.target.value)} className='dateInput' placeholder='enter start date' />
+              </div>
               <TextField id="filled-basic" label="Enter Property Name..." variant="filled" className='nameInput' onChange={(e) => setPropertyName(e.target.value)} />
             </div>
             <div className="enetry">
@@ -3922,7 +3925,7 @@ const Home = () => {
                   <MenuItem value={11}>{resultSTart[10]}</MenuItem>
                   <MenuItem value={12}>{resultSTart[11]}</MenuItem>
                   <MenuItem value={13}>{resultSTart[12]}</MenuItem>
-                  <MenuItem value={14}>{resultSTart[13]}</MenuItem>
+                  {/* <MenuItem value={14}>{resultSTart[13]}</MenuItem>
                   <MenuItem value={15}>{resultSTart[14]}</MenuItem>
                   <MenuItem value={16}>{resultSTart[15]}</MenuItem>
                   <MenuItem value={17}>{resultSTart[16]}</MenuItem>
@@ -3944,7 +3947,7 @@ const Home = () => {
                   <MenuItem value={33}>{resultSTart[32]}</MenuItem>
                   <MenuItem value={34}>{resultSTart[33]}</MenuItem>
                   <MenuItem value={35}>{resultSTart[34]}</MenuItem>
-                  <MenuItem value={36}>{resultSTart[35]}</MenuItem>
+                  <MenuItem value={36}>{resultSTart[35]}</MenuItem> */}
 
                 </Select>
               </FormControl>

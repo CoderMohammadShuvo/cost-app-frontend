@@ -41,6 +41,13 @@
     display: flex;
     margin-right: 50px;
 }
+.dateInput{
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    height: 50px;
+}
 .user h1{
     font-weight: 700;
 color: #6E3559;

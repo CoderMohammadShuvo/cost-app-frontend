@@ -1973,6 +1973,31 @@ const Home = () => {
   const [monthlyCost10, setMonthlyCost10] = useState('0');
   const [monthlyCost11, setMonthlyCost11] = useState('0');
   const [monthlyCost12, setMonthlyCost12] = useState('0');
+  const [monthlyCost13, setMonthlyCost13] = useState('0');
+  const [monthlyCost14, setMonthlyCost14] = useState('0');
+  const [monthlyCost15, setMonthlyCost15] = useState('0');
+  const [monthlyCost16, setMonthlyCost16] = useState('0');
+  const [monthlyCost17, setMonthlyCost17] = useState('0');
+  const [monthlyCost18, setMonthlyCost18] = useState('0');
+  const [monthlyCost19, setMonthlyCost19] = useState('0');
+  const [monthlyCost20, setMonthlyCost20] = useState('0');
+  const [monthlyCost21, setMonthlyCost21] = useState('0');
+  const [monthlyCost22, setMonthlyCost22] = useState('0');
+  const [monthlyCost23, setMonthlyCost23] = useState('0');
+  const [monthlyCost24, setMonthlyCost24] = useState('0');
+  const [monthlyCost25, setMonthlyCost25] = useState('0');
+  const [monthlyCost26, setMonthlyCost26] = useState('0');
+  const [monthlyCost27, setMonthlyCost27] = useState('0');
+  const [monthlyCost28, setMonthlyCost28] = useState('0');
+  const [monthlyCost29, setMonthlyCost29] = useState('0');
+  const [monthlyCost30, setMonthlyCost30] = useState('0');
+  const [monthlyCost31, setMonthlyCost31] = useState('0');
+  const [monthlyCost32, setMonthlyCost32] = useState('0');
+  const [monthlyCost33, setMonthlyCost33] = useState('0');
+  const [monthlyCost34, setMonthlyCost34] = useState('0');
+  const [monthlyCost35, setMonthlyCost35] = useState('0');
+  const [monthlyCost36, setMonthlyCost36] = useState('0');
+
   const [netProfit, setNetProfit] = useState('0');
   const [recalm, setRecalm] = useState('0')
   const [recalm2, setRecalm2] = useState('0');
@@ -1985,7 +2010,38 @@ const Home = () => {
     setMonthlyCost5(value);
     setMonthlyCost6(value);
     setMonthlyCost7(value);
+    setMonthlyCost8(value);
+    setMonthlyCost9(value);
+    setMonthlyCost10(value);
+    setMonthlyCost11(value);
+    setMonthlyCost12(value);
+    setMonthlyCost13(value);
+    setMonthlyCost14(value);
+    setMonthlyCost15(value);
+    setMonthlyCost16(value);
+    setMonthlyCost17(value);
+    setMonthlyCost18(value);
+    setMonthlyCost19(value);
+    setMonthlyCost20(value);
+    setMonthlyCost21(value);
+    setMonthlyCost22(value);
+    setMonthlyCost23(value);
+    setMonthlyCost24(value);
+    setMonthlyCost25(value);
+    setMonthlyCost26(value);
+    setMonthlyCost27(value);
+    setMonthlyCost28(value);
+    setMonthlyCost29(value);
+    setMonthlyCost30(value);
+    setMonthlyCost31(value);
+    setMonthlyCost32(value);
+    setMonthlyCost33(value);
+    setMonthlyCost34(value);
+    setMonthlyCost35(value);
+    setMonthlyCost36(value);
+    
     calculateNetProfit(value);
+
   };
   const handleMonthlyCost2 = (e) => {
     const value = e.target.value;
@@ -2041,6 +2097,66 @@ const Home = () => {
   const handleMonthlyCost12= (e) => {
     const value = e.target.value;
     setMonthlyCost12(value);
+    calculateNetProfit(value);
+  };
+  const handleMonthlyCost13= (e) => {
+    const value = e.target.value;
+    setMonthlyCost13(value);
+    calculateNetProfit(value);
+  };
+  const handleMonthlyCost14= (e) => {
+    const value = e.target.value;
+    setMonthlyCost14(value);
+    calculateNetProfit(value);
+  };
+  const handleMonthlyCost15= (e) => {
+    const value = e.target.value;
+    setMonthlyCost15(value);
+    calculateNetProfit(value);
+  };
+  const handleMonthlyCost16= (e) => {
+    const value = e.target.value;
+    setMonthlyCost16(value);
+    calculateNetProfit(value);
+  };
+  const handleMonthlyCost17= (e) => {
+    const value = e.target.value;
+    setMonthlyCost17(value);
+    calculateNetProfit(value);
+  };
+  const handleMonthlyCost18= (e) => {
+    const value = e.target.value;
+    setMonthlyCost18(value);
+    calculateNetProfit(value);
+  };
+  const handleMonthlyCost19= (e) => {
+    const value = e.target.value;
+    setMonthlyCost19(value);
+    calculateNetProfit(value);
+  };
+  const handleMonthlyCost20= (e) => {
+    const value = e.target.value;
+    setMonthlyCost20(value);
+    calculateNetProfit(value);
+  };
+  const handleMonthlyCost21= (e) => {
+    const value = e.target.value;
+    setMonthlyCost21(value);
+    calculateNetProfit(value);
+  };
+  const handleMonthlyCost22= (e) => {
+    const value = e.target.value;
+    setMonthlyCost22(value);
+    calculateNetProfit(value);
+  };
+  const handleMonthlyCost23= (e) => {
+    const value = e.target.value;
+    setMonthlyCost23(value);
+    calculateNetProfit(value);
+  };
+  const handleMonthlyCost24= (e) => {
+    const value = e.target.value;
+    setMonthlyCost24(value);
     calculateNetProfit(value);
   };
 
@@ -3847,7 +3963,7 @@ const Home = () => {
     console.log(startDateMain)
     const inputDate = '2022-08-01';
     const resultSTart = getNext36Months(startDateMain);
-    console.log(resultSTart[0]);
+
   return (
     <div className='homeMain'>
       <div className="menu">
@@ -3912,42 +4028,42 @@ const Home = () => {
                   label="Time Span"
                   onChange={handleChange}
                 >
-                  <MenuItem value={1}>{resultSTart[0]}</MenuItem>
-                  <MenuItem value={2}>{resultSTart[1]}</MenuItem>
-                  <MenuItem value={3}>{resultSTart[2]}</MenuItem>
-                  <MenuItem value={4}>{resultSTart[3]}</MenuItem>
-                  <MenuItem value={5}>{resultSTart[4]}</MenuItem>
-                  <MenuItem value={6}>{resultSTart[5]}</MenuItem>
-                  <MenuItem value={7}>{resultSTart[6]}</MenuItem>
-                  <MenuItem value={8}>{resultSTart[7]}</MenuItem>
-                  <MenuItem value={9}>{resultSTart[8]}</MenuItem>
-                  <MenuItem value={10}>{resultSTart[9]}</MenuItem>
-                  <MenuItem value={11}>{resultSTart[10]}</MenuItem>
-                  <MenuItem value={12}>{resultSTart[11]}</MenuItem>
-                  <MenuItem value={13}>{resultSTart[12]}</MenuItem>
-                  {/* <MenuItem value={14}>{resultSTart[13]}</MenuItem>
-                  <MenuItem value={15}>{resultSTart[14]}</MenuItem>
-                  <MenuItem value={16}>{resultSTart[15]}</MenuItem>
-                  <MenuItem value={17}>{resultSTart[16]}</MenuItem>
-                  <MenuItem value={18}>{resultSTart[17]}</MenuItem>
-                  <MenuItem value={19}>{resultSTart[18]}</MenuItem>
-                  <MenuItem value={20}>{resultSTart[19]}</MenuItem>
-                  <MenuItem value={21}>{resultSTart[20]}</MenuItem>
-                  <MenuItem value={22}>{resultSTart[21]}</MenuItem>
-                  <MenuItem value={23}>{resultSTart[22]}</MenuItem>
-                  <MenuItem value={24}>{resultSTart[23]}</MenuItem>
-                  <MenuItem value={25}>{resultSTart[24]}</MenuItem>
-                  <MenuItem value={26}>{resultSTart[25]}</MenuItem>
-                  <MenuItem value={27}>{resultSTart[26]}</MenuItem>
-                  <MenuItem value={28}>{resultSTart[27]}</MenuItem>
-                  <MenuItem value={29}>{resultSTart[28]}</MenuItem>
-                  <MenuItem value={30}>{resultSTart[29]}</MenuItem>
-                  <MenuItem value={31}>{resultSTart[30]}</MenuItem>
-                  <MenuItem value={32}>{resultSTart[31]}</MenuItem>
-                  <MenuItem value={33}>{resultSTart[32]}</MenuItem>
-                  <MenuItem value={34}>{resultSTart[33]}</MenuItem>
-                  <MenuItem value={35}>{resultSTart[34]}</MenuItem>
-                  <MenuItem value={36}>{resultSTart[35]}</MenuItem> */}
+                  <MenuItem value={1} ><span style={{marginRight:'10px', fontWeight:"bold"}}>1st Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[0]}</span></MenuItem>
+                  <MenuItem value={2}><span style={{marginRight:'10px', fontWeight:"bold"}}>2nd Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[1]}</span></MenuItem>
+                  <MenuItem value={3}><span style={{marginRight:'10px', fontWeight:"bold"}}>3rd Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[2]}</span></MenuItem>
+                  <MenuItem value={4}><span style={{marginRight:'10px', fontWeight:"bold"}}>4th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[3]}</span></MenuItem>
+                  <MenuItem value={5}><span style={{marginRight:'10px', fontWeight:"bold"}}>5th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[4]}</span></MenuItem>
+                  <MenuItem value={6}><span style={{marginRight:'10px', fontWeight:"bold"}}>6th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[5]}</span></MenuItem>
+                  <MenuItem value={7}><span style={{marginRight:'10px', fontWeight:"bold"}}>7th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[6]}</span></MenuItem>
+                  <MenuItem value={8}><span style={{marginRight:'10px', fontWeight:"bold"}}>8th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[7]}</span></MenuItem>
+                  <MenuItem value={9}><span style={{marginRight:'10px', fontWeight:"bold"}}>9th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[8]}</span></MenuItem>
+                  <MenuItem value={10}><span style={{marginRight:'10px', fontWeight:"bold"}}>10th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[9]}</span></MenuItem>
+                  <MenuItem value={11}><span style={{marginRight:'10px', fontWeight:"bold"}}>11th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[10]}</span></MenuItem>
+                  <MenuItem value={12}><span style={{marginRight:'10px', fontWeight:"bold"}}>12th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[11]}</span></MenuItem>
+                  <MenuItem value={13}><span style={{marginRight:'10px', fontWeight:"bold"}}>13th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[12]}</span></MenuItem>
+                  <MenuItem value={15}><span style={{marginRight:'10px', fontWeight:"bold"}}>14th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[13]}</span></MenuItem>
+                  <MenuItem value={16}><span style={{marginRight:'10px', fontWeight:"bold"}}>15th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[14]}</span></MenuItem>
+                  <MenuItem value={17}><span style={{marginRight:'10px', fontWeight:"bold"}}>16th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[15]}</span></MenuItem>
+                  <MenuItem value={18}><span style={{marginRight:'10px', fontWeight:"bold"}}>17th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[16]}</span></MenuItem>
+                  <MenuItem value={19}><span style={{marginRight:'10px', fontWeight:"bold"}}>18th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[17]}</span></MenuItem>
+                  {/* <MenuItem value={20}><span style={{marginRight:'10px', fontWeight:"bold"}}>19th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[18]}</span></MenuItem>
+                  <MenuItem value={21}><span style={{marginRight:'10px', fontWeight:"bold"}}>20th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[19]}</span></MenuItem>
+                  <MenuItem value={22}><span style={{marginRight:'10px', fontWeight:"bold"}}>21th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[20]}</span></MenuItem>
+                  <MenuItem value={23}><span style={{marginRight:'10px', fontWeight:"bold"}}>22th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[21]}</span></MenuItem>
+                  <MenuItem value={24}><span style={{marginRight:'10px', fontWeight:"bold"}}>23th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[22]}</span></MenuItem>
+                  <MenuItem value={25}><span style={{marginRight:'10px', fontWeight:"bold"}}>24th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[23]}</span></MenuItem>
+                  <MenuItem value={26}><span style={{marginRight:'10px', fontWeight:"bold"}}>25th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[24]}</span></MenuItem>
+                  <MenuItem value={27}><span style={{marginRight:'10px', fontWeight:"bold"}}>26th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[25]}</span></MenuItem>
+                  <MenuItem value={28}><span style={{marginRight:'10px', fontWeight:"bold"}}>27th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[26]}</span></MenuItem>
+                  <MenuItem value={29}><span style={{marginRight:'10px', fontWeight:"bold"}}>28th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[27]}</span></MenuItem>
+                  <MenuItem value={30}><span style={{marginRight:'10px', fontWeight:"bold"}}>29th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[28]}</span></MenuItem>
+                  <MenuItem value={31}><span style={{marginRight:'10px', fontWeight:"bold"}}>30th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[29]}</span></MenuItem>
+                  <MenuItem value={32}><span style={{marginRight:'10px', fontWeight:"bold"}}>31th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[30]}</span></MenuItem>
+                  <MenuItem value={33}><span style={{marginRight:'10px', fontWeight:"bold"}}>32th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[31]}</span></MenuItem>
+                  <MenuItem value={34}><span style={{marginRight:'10px', fontWeight:"bold"}}>33th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[32]}</span></MenuItem>
+                  <MenuItem value={35}><span style={{marginRight:'10px', fontWeight:"bold"}}>34th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[33]}</span></MenuItem>
+                  <MenuItem value={36}><span style={{marginRight:'10px', fontWeight:"bold"}}>35th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[34]}</span></MenuItem>
+                  <MenuItem value={14}><span style={{marginRight:'10px', fontWeight:"bold"}}>36th Month</span> <br /><span style={{fontSize:"12px"}}>{resultSTart[35]}</span></MenuItem> */}
 
                 </Select>
               </FormControl>
@@ -4173,7 +4289,7 @@ const Home = () => {
             <div className="tableBodyContent">
 
               <div className="tableIndi">
-                <p className='content' ><span>{resultSTart[0]}</span></p>
+                <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>1.</span> <br /><span >{resultSTart[0]}</span></p>
                 <p className='content' ><span>{parseFloat(number1)}</span></p>
                 <div className='content' >
 
@@ -4285,7 +4401,7 @@ const Home = () => {
               </div>
               {
                 age >= 2 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[1]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>2.</span> <br /><span >{resultSTart[1]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >
 
@@ -4420,7 +4536,7 @@ const Home = () => {
               }
               {
                 age >= 3 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[2]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>3.</span> <br /><span >{resultSTart[2]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >
 
@@ -4554,7 +4670,7 @@ const Home = () => {
               }
               {
                 age >= 4 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[3]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>4.</span> <br /><span >{resultSTart[3]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >
 
@@ -4698,7 +4814,7 @@ const Home = () => {
               }
               {
                 age >= 5 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[4]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>5.</span> <br /><span >{resultSTart[4]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 28 ? <input
@@ -4841,7 +4957,7 @@ const Home = () => {
               }
               {
                 age >= 6 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[5]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>6.</span> <br /><span >{resultSTart[5]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 35 ? <input
@@ -4987,7 +5103,7 @@ const Home = () => {
               }
               {
                 age >= 7 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[6]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>7.</span> <br /><span >{resultSTart[6]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 42 ? <input
@@ -5134,7 +5250,7 @@ const Home = () => {
               }
               {
                 age >= 8 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[7]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>8.</span> <br /><span >{resultSTart[7]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 49 ? <input
@@ -5286,7 +5402,7 @@ const Home = () => {
               }
               {
                 age >= 9 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[8]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>9.</span> <br /><span >{resultSTart[8]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 56 ? <input
@@ -5441,7 +5557,7 @@ const Home = () => {
               }
               {
                 age >= 10 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[9]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>10.</span> <br /><span >{resultSTart[9]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 63 ? <input
@@ -5602,7 +5718,7 @@ const Home = () => {
 
               {
                 age >= 11 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[10]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>11.</span> <br /><span >{resultSTart[10]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 70 ? <input
@@ -5765,7 +5881,7 @@ const Home = () => {
 
               {
                 age >= 12 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[11]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>12.</span> <br /><span >{resultSTart[11]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 77 ? <input
@@ -5934,7 +6050,7 @@ const Home = () => {
 
               {
                 age >= 13 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[12]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>13.</span> <br /><span >{resultSTart[12]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 84 ? <input
@@ -5950,7 +6066,17 @@ const Home = () => {
 
 
                   <p className='content' ><span></span></p>
-                  <p className='content' ><span>{monthlyCost}</span></p>
+                  <p className='content' > {
+    active === 311 ? <input
+      type="text"
+      value={monthlyCost13}
+      onChange={handleMonthlyCost13}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{monthlyCost13}</p>
+      <img src={Edit} alt="" onClick={() => setActive(311)} />
+    </div>
+  }</p>
                   <div className='content' >
                     {
                       active === 85 ? <input
@@ -6041,7 +6167,7 @@ const Home = () => {
 
 
                   <p className='content' > <span>{parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13)}</span></p>
-                  <p className='content' > <span>{parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)}</span></p>
+                  <p className='content' > <span>{parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)}</span></p>
                   <p className='content' >
 
 
@@ -6049,40 +6175,40 @@ const Home = () => {
                     {
                       parseFloat(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                         (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost))
+                        (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                        (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                        (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                        (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                        (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                        (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                        (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                        (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                        (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                        (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13))
                         + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13)) >= 0 ? <span style={{ color: "red" }}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost))
+                          (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                          (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                          (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                          (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                          (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                          (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                          (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                          (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                          (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                          (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13))
                           + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13)} </span> : <span style={{ color: "green" }}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost))
+                            (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                            (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                            (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                            (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                            (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                            (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                            (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                            (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                            (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                            (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13))
                             + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13))}</span>
                     }
 
@@ -6095,7 +6221,7 @@ const Home = () => {
 
               {
                 age >= 14 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[13]}</span></p>
+                             <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>14.</span> <br /><span >{resultSTart[13]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 91 ? <input
@@ -6111,7 +6237,17 @@ const Home = () => {
 
 
                   <p className='content' ><span></span></p>
-                  <p className='content' ><span>{monthlyCost}</span></p>
+                  <p className='content' > {
+    active === 312 ? <input
+      type="text"
+      value={monthlyCost14}
+      onChange={handleMonthlyCost14}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{monthlyCost14}</p>
+      <img src={Edit} alt="" onClick={() => setActive(312)} />
+    </div>
+  }</p>
                   <div className='content' >
                     {
                       active === 92 ? <input
@@ -6202,7 +6338,7 @@ const Home = () => {
 
 
                   <p className='content' > <span>{parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14)}</span></p>
-                  <p className='content' > <span>{parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost)}</span></p>
+                  <p className='content' > <span>{parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14)}</span></p>
                   <p className='content' >
 
 
@@ -6210,43 +6346,43 @@ const Home = () => {
                     {
                       parseFloat(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                         (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost))
+                        (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                        (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                        (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                        (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                        (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                        (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                        (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                        (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                        (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                        (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                        (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14))
                         + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14)) >= 0 ? <span style={{ color: "red" }}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost))
+                          (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                          (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                          (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                          (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                          (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                          (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                          (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                          (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                          (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                          (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                          (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14))
                           + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14)} </span> : <span style={{ color: "green" }}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost))
+                            (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                            (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                            (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                            (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                            (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                            (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                            (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                            (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                            (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                            (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                            (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14))
                             + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14))}</span>
                     }
 
@@ -6259,7 +6395,7 @@ const Home = () => {
 
               {
                 age >= 15 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[14]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>15.</span> <br /><span >{resultSTart[14]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 98 ? <input
@@ -6275,7 +6411,17 @@ const Home = () => {
 
 
                   <p className='content' ><span></span></p>
-                  <p className='content' ><span>{monthlyCost}</span></p>
+                  <p className='content' > {
+    active === 313 ? <input
+      type="text"
+      value={monthlyCost15}
+      onChange={handleMonthlyCost15}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{monthlyCost15}</p>
+      <img src={Edit} alt="" onClick={() => setActive(313)} />
+    </div>
+  }</p>
                   <div className='content' >
                     {
                       active === 99 ? <input
@@ -6367,7 +6513,7 @@ const Home = () => {
 
 
                   <p className='content' > <span>{parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15)}</span></p>
-                  <p className='content' > <span>{parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost)}</span></p>
+                  <p className='content' > <span>{parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost15)}</span></p>
                   <p className='content' >
 
 
@@ -6375,46 +6521,46 @@ const Home = () => {
                     {
                       parseFloat(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                         (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost))
+                        (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                        (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                        (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                        (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                        (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                        (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                        (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                        (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                        (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                        (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                        (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14)) -
+                        (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost15))
                         + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15)) >= 0 ? <span style={{ color: "red" }}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost))
+                          (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                          (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                          (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                          (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                          (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                          (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                          (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                          (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                          (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                          (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                          (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14)) -
+                          (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost15))
                           + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15)} </span> : <span style={{ color: "green" }}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost))
+                            (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                            (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                            (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                            (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                            (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                            (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                            (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                            (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                            (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                            (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                            (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14)) -
+                            (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost15))
                             + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15))}</span>
                     }
 
@@ -6426,7 +6572,7 @@ const Home = () => {
               }
               {
                 age >= 16 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[15]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>16.</span> <br /><span >{resultSTart[15]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 105 ? <input
@@ -6442,7 +6588,17 @@ const Home = () => {
 
 
                   <p className='content' ><span></span></p>
-                  <p className='content' ><span>{monthlyCost}</span></p>
+                  <p className='content' > {
+    active === 314 ? <input
+      type="text"
+      value={monthlyCost16}
+      onChange={handleMonthlyCost16}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{monthlyCost16}</p>
+      <img src={Edit} alt="" onClick={() => setActive(314)} />
+    </div>
+  }</p>
                   <div className='content' >
                     {
                       active === 106 ? <input
@@ -6534,7 +6690,7 @@ const Home = () => {
 
 
                   <p className='content' > <span>{parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16)}</span></p>
-                  <p className='content' > <span>{parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost)}</span></p>
+                  <p className='content' > <span>{parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost16)}</span></p>
                   <p className='content' >
 
 
@@ -6542,49 +6698,49 @@ const Home = () => {
                     {
                       parseFloat(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                         (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost))
+                        (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                        (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                        (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                        (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                        (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                        (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                        (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                        (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                        (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                        (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                        (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14)) -
+                        (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost15)) -
+                        (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost16))
                         + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16)) >= 0 ? <span style={{ color: "red" }}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost))
+                          (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                          (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                          (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                          (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                          (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                          (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                          (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                          (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                          (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                          (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                          (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14)) -
+                          (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost15)) -
+                          (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost16))
                           + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16)} </span> : <span style={{ color: "green" }}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost))
+                            (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                            (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                            (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                            (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                            (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                            (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                            (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                            (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                            (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                            (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                            (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14)) -
+                            (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost15)) -
+                            (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost16))
                             + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16))}</span>
                     }
 
@@ -6596,7 +6752,8 @@ const Home = () => {
               }
               {
                 age >= 17 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[16]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>17.</span> <br /><span >{resultSTart[16]}</span></p>
+
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 112 ? <input
@@ -6612,7 +6769,17 @@ const Home = () => {
 
 
                   <p className='content' ><span></span></p>
-                  <p className='content' ><span>{monthlyCost}</span></p>
+                  <p className='content' > {
+    active === 315 ? <input
+      type="text"
+      value={monthlyCost17}
+      onChange={handleMonthlyCost17}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{monthlyCost17}</p>
+      <img src={Edit} alt="" onClick={() => setActive(315)} />
+    </div>
+  }</p>
                   <div className='content' >
                     {
                       active === 113 ? <input
@@ -6704,7 +6871,7 @@ const Home = () => {
 
 
                   <p className='content' > <span>{parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17)}</span></p>
-                  <p className='content' > <span>{parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost)}</span></p>
+                  <p className='content' > <span>{parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost17)}</span></p>
                   <p className='content' >
 
 
@@ -6712,52 +6879,52 @@ const Home = () => {
                     {
                       parseFloat(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                         (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost))
+                        (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                        (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                        (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                        (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                        (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                        (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                        (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                        (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                        (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                        (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                        (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14)) -
+                        (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost15)) -
+                        (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost16)) -
+                        (parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost17))
                         + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16) + parseFloat(number17)) >= 0 ? <span style={{ color: "red" }}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost))
+                          (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                          (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                          (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                          (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                          (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                          (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                          (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                          (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                          (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                          (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                          (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14)) -
+                          (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost15)) -
+                          (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost16)) -
+                          (parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost17))
                           + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16) + parseFloat(number17)} </span> : <span style={{ color: "green" }}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost))
+                            (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                            (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                            (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                            (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                            (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                            (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                            (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                            (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                            (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                            (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                            (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14)) -
+                            (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost15)) -
+                            (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost16)) -
+                            (parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost17))
                             + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16)) + parseFloat(number17)}</span>
                     }
 
@@ -6769,7 +6936,7 @@ const Home = () => {
               }
               {
                 age >= 18 ? <div className="tableIndi">
-                  <p className='content' ><span>{resultSTart[17]}</span></p>
+                  <p className='content' ><span style={{marginRight:"10px", fontWeight:'bold'}}>18.</span> <br /><span >{resultSTart[17]}</span></p>
                   <p className='content' ><span></span></p>
                   <div className='content' >{
                     active === 119 ? <input
@@ -6785,7 +6952,17 @@ const Home = () => {
 
 
                   <p className='content' ><span></span></p>
-                  <p className='content' ><span>{monthlyCost}</span></p>
+                  <p className='content' > {
+    active === 316 ? <input
+      type="text"
+      value={monthlyCost18}
+      onChange={handleMonthlyCost18}
+      className='inputText'
+    /> : <div className='contentTwoZed'>
+      <p>{monthlyCost18}</p>
+      <img src={Edit} alt="" onClick={() => setActive(316)} />
+    </div>
+  }</p>
                   <div className='content' >
                     {
                       active === 120 ? <input
@@ -6877,7 +7054,7 @@ const Home = () => {
 
 
                   <p className='content' > <span>{parseFloat(oneBed18) + parseFloat(twoBed18) + parseFloat(threeBed18) + parseFloat(fourBed18) + parseFloat(fiveBed18) + parseFloat(sixBed18)}</span></p>
-                  <p className='content' > <span>{parseFloat(oneBed18) + parseFloat(twoBed18) + parseFloat(threeBed18) + parseFloat(fourBed18) + parseFloat(fiveBed18) + parseFloat(sixBed18) - parseFloat(monthlyCost)}</span></p>
+                  <p className='content' > <span>{parseFloat(oneBed18) + parseFloat(twoBed18) + parseFloat(threeBed18) + parseFloat(fourBed18) + parseFloat(fiveBed18) + parseFloat(sixBed18) - parseFloat(monthlyCost18)}</span></p>
                   <p className='content' >
 
 
@@ -6885,55 +7062,55 @@ const Home = () => {
                     {
                       parseFloat(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                         (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost)) -
-                        (parseFloat(oneBed18) + parseFloat(twoBed18) + parseFloat(threeBed18) + parseFloat(fourBed18) + parseFloat(fiveBed18) + parseFloat(sixBed18) - parseFloat(monthlyCost))
+                        (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                        (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                        (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                        (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                        (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                        (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                        (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                        (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                        (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                        (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                        (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14)) -
+                        (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost15)) -
+                        (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost16)) -
+                        (parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost17)) -
+                        (parseFloat(oneBed18) + parseFloat(twoBed18) + parseFloat(threeBed18) + parseFloat(fourBed18) + parseFloat(fiveBed18) + parseFloat(sixBed18) - parseFloat(monthlyCost18))
                         + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16) + parseFloat(number17) + parseFloat(number18)) >= 0 ? <span style={{ color: "red" }}>- {recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                           (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost)) -
-                          (parseFloat(oneBed18) + parseFloat(twoBed18) + parseFloat(threeBed18) + parseFloat(fourBed18) + parseFloat(fiveBed18) + parseFloat(sixBed18) - parseFloat(monthlyCost))
+                          (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                          (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                          (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                          (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                          (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                          (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                          (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                          (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                          (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                          (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                          (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14)) -
+                          (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost15)) -
+                          (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost16)) -
+                          (parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost17)) -
+                          (parseFloat(oneBed18) + parseFloat(twoBed18) + parseFloat(threeBed18) + parseFloat(fourBed18) + parseFloat(fiveBed18) + parseFloat(sixBed18) - parseFloat(monthlyCost18))
                           + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16) + parseFloat(number17) + parseFloat(number18)} </span> : <span style={{ color: "green" }}>{Math.abs(recalm - (parseFloat(oneBed2) + parseFloat(twoBed2) + parseFloat(threeBed2) + parseFloat(fourBed2) + parseFloat(fiveBed2) + parseFloat(sixBed2) - parseFloat(monthlyCost)) -
                             (parseFloat(oneBed3) + parseFloat(twoBed3) + parseFloat(threeBed3) + parseFloat(fourBed3) + parseFloat(fiveBed3) + parseFloat(sixBed3) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost)) -
-                            (parseFloat(oneBed18) + parseFloat(twoBed18) + parseFloat(threeBed18) + parseFloat(fourBed18) + parseFloat(fiveBed18) + parseFloat(sixBed18) - parseFloat(monthlyCost))
+                            (parseFloat(oneBed4) + parseFloat(twoBed4) + parseFloat(threeBed4) + parseFloat(fourBed4) + parseFloat(fiveBed4) + parseFloat(sixBed4) - parseFloat(monthlyCost4)) -
+                            (parseFloat(oneBed5) + parseFloat(twoBed5) + parseFloat(threeBed5) + parseFloat(fourBed5) + parseFloat(fiveBed5) + parseFloat(sixBed5) - parseFloat(monthlyCost5)) -
+                            (parseFloat(oneBed6) + parseFloat(twoBed6) + parseFloat(threeBed6) + parseFloat(fourBed6) + parseFloat(fiveBed6) + parseFloat(sixBed6) - parseFloat(monthlyCost6)) -
+                            (parseFloat(oneBed7) + parseFloat(twoBed7) + parseFloat(threeBed7) + parseFloat(fourBed7) + parseFloat(fiveBed7) + parseFloat(sixBed7) - parseFloat(monthlyCost7)) -
+                            (parseFloat(oneBed8) + parseFloat(twoBed8) + parseFloat(threeBed8) + parseFloat(fourBed8) + parseFloat(fiveBed8) + parseFloat(sixBed8) - parseFloat(monthlyCost8)) -
+                            (parseFloat(oneBed9) + parseFloat(twoBed9) + parseFloat(threeBed9) + parseFloat(fourBed9) + parseFloat(fiveBed9) + parseFloat(sixBed9) - parseFloat(monthlyCost9)) -
+                            (parseFloat(oneBed10) + parseFloat(twoBed10) + parseFloat(threeBed10) + parseFloat(fourBed10) + parseFloat(fiveBed10) + parseFloat(sixBed10) - parseFloat(monthlyCost10)) -
+                            (parseFloat(oneBed11) + parseFloat(twoBed11) + parseFloat(threeBed11) + parseFloat(fourBed11) + parseFloat(fiveBed11) + parseFloat(sixBed11) - parseFloat(monthlyCost11)) -
+                            (parseFloat(oneBed12) + parseFloat(twoBed12) + parseFloat(threeBed12) + parseFloat(fourBed12) + parseFloat(fiveBed12) + parseFloat(sixBed12) - parseFloat(monthlyCost12)) -
+                            (parseFloat(oneBed13) + parseFloat(twoBed13) + parseFloat(threeBed13) + parseFloat(fourBed13) + parseFloat(fiveBed13) + parseFloat(sixBed13) - parseFloat(monthlyCost13)) -
+                            (parseFloat(oneBed14) + parseFloat(twoBed14) + parseFloat(threeBed14) + parseFloat(fourBed14) + parseFloat(fiveBed14) + parseFloat(sixBed14) - parseFloat(monthlyCost14)) -
+                            (parseFloat(oneBed15) + parseFloat(twoBed15) + parseFloat(threeBed15) + parseFloat(fourBed15) + parseFloat(fiveBed15) + parseFloat(sixBed15) - parseFloat(monthlyCost15)) -
+                            (parseFloat(oneBed16) + parseFloat(twoBed16) + parseFloat(threeBed16) + parseFloat(fourBed16) + parseFloat(fiveBed16) + parseFloat(sixBed16) - parseFloat(monthlyCost16)) -
+                            (parseFloat(oneBed17) + parseFloat(twoBed17) + parseFloat(threeBed17) + parseFloat(fourBed17) + parseFloat(fiveBed17) + parseFloat(sixBed17) - parseFloat(monthlyCost17)) -
+                            (parseFloat(oneBed18) + parseFloat(twoBed18) + parseFloat(threeBed18) + parseFloat(fourBed18) + parseFloat(fiveBed18) + parseFloat(sixBed18) - parseFloat(monthlyCost18))
                             + parseFloat(number3) + parseFloat(number4) + parseFloat(number5) + parseFloat(number6) + parseFloat(number7) + parseFloat(number8) + parseFloat(number9) + parseFloat(number10) + parseFloat(number11) + parseFloat(number12) + parseFloat(number13) + parseFloat(number14) + parseFloat(number15) + parseFloat(number16)) + parseFloat(number17) + parseFloat(number18)}</span>
                     }
 
